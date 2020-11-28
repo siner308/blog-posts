@@ -34,8 +34,8 @@ SOLID 원칙과 관련된 좋은 자료들이 온라인에 많이 존재하지�
 
 >클래스는, 오직 하나의 대해서만 책임져야 한다.
 
-![image](/images/solid-principles/srp-1.png)
-![image](/images/solid-principles/srp-2.jpg)
+![image](/posts/images/solid-principles/srp-1.png)
+![image](/posts/images/solid-principles/srp-2.jpg)
 
 만약 클래스가 여러가지 작업을 책임져야 한다면, 이는 버그 발생 가능성을 높입니다.
 당신이 많은 기능중 한가지를 변경할때, 당신이 모르는 사이에 다른 기능에 영향을 줄 수 있기 때문입니다.
@@ -144,8 +144,8 @@ marketer.doMyJob();
 
 > 클래스는 확장에는 개방적이어야 하고, 변경에는 폐쇄적이어야 한다.
 
-![image](/images/solid-principles/ocp-1.png)
-![image](/images/solid-principles/ocp-2.jpg)
+![image](/posts/images/solid-principles/ocp-1.png)
+![image](/posts/images/solid-principles/ocp-2.jpg)
 
 클래스의 현재 코드를 변경하는것은 해당 클래스를 사용하고 있는 모든 시스템에 영향을 주게 됩니다. 
 
@@ -271,8 +271,8 @@ developer.someJob();
 
 > 만약 S가 T의 서브타입이라면, T는 어떠한 경고도 내지 않으면서, S로 대체가 가능합니다.
 
-![image](/images/solid-principles/lsp-1.png)
-![image](/images/solid-principles/lsp-2.jpg)
+![image](/posts/images/solid-principles/lsp-1.png)
+![image](/posts/images/solid-principles/lsp-2.jpg)
 
 자식 클래스가 부모클래스의 기능을 똑같이 수행할 수 없을때, 이는 버그를 발생시키는 요인이 됩니다.
 
@@ -365,8 +365,8 @@ clockChild.getDateWithLocaleString(); // 2020. 6. 18. 오전 1:11:33
 
 > 클라이언트는 사용하지 않는 메서드에 대해 의존적이지 않아야 합니다.
 
-![image](/images/solid-principles/isp-1.png)
-![image](/images/solid-principles/isp-2.jpg)
+![image](/posts/images/solid-principles/isp-1.png)
+![image](/posts/images/solid-principles/isp-2.jpg)
 
 클래스가 서로 관계없는 기능들을 가지고 있다면 낭비가 되고, 예상치못한 버그를 발생시킬 수 있습니다.
 
@@ -431,8 +431,8 @@ class AllInOnePrinter implements IPrint, IFax, IScan {
 > 추상(abstraction)은 구체(detail)에 의존하지 않아야 하며, 구체는 추상에 의존적이어야 합니다.<br> 
 > 고수준의 모듈은 저수준의 모듈에 의존적이면 안되고, 둘다 추상에 의존적이어야 합니다.
 
-![image](/images/solid-principles/dip-1.png)
-![image](/images/solid-principles/dip-2.jpg)
+![image](/posts/images/solid-principles/dip-1.png)
+![image](/posts/images/solid-principles/dip-2.jpg)
 
 먼저, 쉬운 설명을 위해 용어를 정하도록 합시다.
 
