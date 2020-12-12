@@ -108,6 +108,7 @@ app.listen(3000);
 (아래의 코드는 에러 핸들러가 아닌, `에러 핸들러로 가기 이전 단계의 코드`입니다.)
 
 1. throw를 통해 Error를 발생시켜서 전달.
+
 ```javascript
 app.get('/', function (req, res) {
   throw new Error('BROKEN') // 에러가 발생하면, Express가 알아서 캐치합니다!
@@ -115,6 +116,7 @@ app.get('/', function (req, res) {
 ```
 
 2. next 함수의 인자로 넘겨서 전달.
+
 ```javascript
 app.get('/', function (req, res, next) {
   fs.readFile('/file-does-not-exist', function (err, data) {
@@ -130,6 +132,7 @@ app.get('/', function (req, res, next) {
 # 3-2. 에러 핸들러 만들기
 이제 에러 핸들러를 직접 만들어봅시다.<br>
 에러 핸들러는 req, res, next 에 `err`라는 인자를 추가로 받습니다. (실제로는 err 인자가 `첫번째로` 위치하게 됩니다.)
+
 ```javascript
 var bodyParser = require('body-parser')
 
