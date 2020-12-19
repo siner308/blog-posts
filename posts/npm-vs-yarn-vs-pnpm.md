@@ -78,7 +78,7 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 ## pnpm
 
 #### 1. foo@39 설치
-- `foo@39` (정확히는 `googleapis@39.2.0`) 의 [package.json](https://github.com/googleapis/google-api-nodejs-client/blob/v39.2.0/package.json)에는 `bar@3.0.0`이 의존성으로 명시되었는데, 실제 설치된건 `bar@3.1.2`였다. [이슈](https://github.com/pnpm/pnpm/issues/3033)로 남겨두고 일단 넘어가자...
+- `foo@39` (정확히는 `googleapis@39.2.0`) 의 [package.json](https://github.com/googleapis/google-api-nodejs-client/blob/v39.2.0/package.json)에는 `bar@3.0.0`이 의존성으로 명시되었지만, `^3.0.0`으로 명시되어있기 때문에 3.0.0 이상 4.0.0이하의 버전중 최신버전인 `bar@3.1.2`가 설치되었다.
 
 ![스크린샷 2020-12-19 오후 7 57 24](https://user-images.githubusercontent.com/34048253/102687733-6aa71700-4234-11eb-947b-6454ee256e02.png)
 <img src="https://user-images.githubusercontent.com/34048253/102688760-17d15d80-423c-11eb-9b0d-99d5ce93daa9.png" width="400" />
@@ -103,7 +103,7 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 - `node_modules`/`bar` 폴더가 삭제되고, `node_modules`/`.pnpm` 폴더에 설치되었던 `bar@6.1.3`의 의존성 패키지가 사라지며, `.pnpm`에는 1번 과정에서 설치되었던 폴더만 남아있게 되었다.
 
 #### 4. foo@39의 의존성으로 설치된 bar@3.1.2 수동으로 설치
-- 잘못 설치된 `bar@3.1.2`를 수동으로 설치해본 결과, `.pnpm`에 존재하던 `bar@3.1.2`의 심볼릭 링크가 `node_modules`/`bar`로 생성되었다.
+- `bar@3.1.2`를 수동으로 설치해본 결과, `.pnpm`에 존재하던 `bar@3.1.2`의 심볼릭 링크가 `node_modules`/`bar`로 생성되었다.
 
 # 결론
 
