@@ -1,3 +1,17 @@
+---
+layout: post
+title:  "npm vs yarn vs pnpm"
+subtitle: "pnpm은 정말로 탄소절감과 ssd수명에 도움을 줄까?"
+author: "Siner"
+catalog: true
+header-mask:  0.3
+tags:
+    - Javascript
+    - Typescript
+date:   2020-12-19
+multilingual: false
+---
+
 # 서론
 
 타입스크립트를 사용하면서 백엔드를 개발하면서 `googleapis@39.2`를 사용하던 도중, 의존성으로 함께 설치되는 `google-auth-library@3.0.0`의 타입을 가져오는데 의문을 가지게 되었다.
