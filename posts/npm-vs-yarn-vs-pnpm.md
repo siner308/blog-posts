@@ -48,11 +48,11 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 
 ## npm
 
-#### 1. foo 설치
+#### 1. foo@39 설치
 - node_modules 하위에 `foo`, `bar`가 flat하게 설치되었다.
 
 #### 2. bar@6.1.3 설치
-- 기존 `node_modules`/`bar` 폴더의 내용이 `foo/node_modules/bar`로 즉시 이동(mv)하는것이 아닌, `bar@3.0.0` 삭제 후 그 위치에 새로 `bar@6.1.3`을 설치하고, `foo`/`node_modules`/`bar` 경로에 `bar`가 새로 설치되었다. 단순히 mv가 아닌 삭제라고 결론내린 이유는, `bar@6.1.3` 설치 전에 `bar@3.0.0` 하위에 새로운 파일을 생성해보고, `bar@3.0.0`이 가지고있는 README.md 파일에 수정을 가한 뒤에 `bar@6.1.3`을 설치했기 때문이다. ~물론 git reset --hard 후에 이동시켰을 가능성도 없지는 않다.~
+- 기존 `node_modules`/`bar` 폴더의 내용이 `foo`/`node_modules`/`bar`로 즉시 이동(mv)하는것이 아닌, `bar@3.0.0` 삭제 후 그 위치에 새로 `bar@6.1.3`을 설치하고, `foo`/`node_modules`/`bar` 경로에 `bar`가 새로 설치되었다. 단순히 mv가 아닌 삭제라고 결론내린 이유는, `bar@6.1.3` 설치 전에 `bar@3.0.0` 하위에 새로운 파일을 생성해보고, `bar@3.0.0`이 가지고있는 README.md 파일에 수정을 가한 뒤에 `bar@6.1.3`을 설치했기 때문이다. ~물론 git reset --hard 후에 이동시켰을 가능성도 없지는 않다.~
 
 #### 3. bar@6.1.3 삭제
 - `node_modules`/`bar` 폴더가 제거되었고, `node_modules`/`foo`/`node_modules`/`bar`가 `node_modules`/`bar`로 돌아오지는 않았다.
@@ -78,12 +78,12 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 ## pnpm
 
 #### 1. foo@39 설치
-- `foo`의 [package.json](https://github.com/googleapis/google-api-nodejs-client/blob/v39.2.0/package.json)에는 `bar@3.0.0`이 의존성으로 명시되었는데, 실제 설치된건 `bar@3.1.2`였다. [이슈](https://github.com/pnpm/pnpm/issues/3033)로 남겨두고 일단 넘어가자...
+- `foo@39` (정확히는 `googleapis@39.2.0`) 의 [package.json](https://github.com/googleapis/google-api-nodejs-client/blob/v39.2.0/package.json)에는 `bar@3.0.0`이 의존성으로 명시되었는데, 실제 설치된건 `bar@3.1.2`였다. [이슈](https://github.com/pnpm/pnpm/issues/3033)로 남겨두고 일단 넘어가자...
 
 ![스크린샷 2020-12-19 오후 7 57 24](https://user-images.githubusercontent.com/34048253/102687733-6aa71700-4234-11eb-947b-6454ee256e02.png)
 <img src="https://user-images.githubusercontent.com/34048253/102688760-17d15d80-423c-11eb-9b0d-99d5ce93daa9.png" width="400" />
 
-- node_modules 하위에 `foo`폴더가 생기고, 의존성을 가지는 패키지들은 `node_modules/.pnpm` 폴더안에 각각의 버전이 포함된 이름 폴더가 생성되었다.
+- `node_modules` 하위에 `foo`폴더가 생기고, 의존성을 가지는 패키지들은 `node_modules`/`.pnpm` 폴더안에 각각의 버전이 포함된 이름 폴더가 생성되었다.
 
 ![스크린샷 2020-12-19 오후 8 47 42](https://user-images.githubusercontent.com/34048253/102688652-71855800-423b-11eb-947e-16fcc1a4b6c6.png)
 
@@ -96,7 +96,7 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 
 
 #### 2. bar@6.1.3 설치
-- `node_modules`/`bar` 폴더가 생성되었고, `node_modules/.pnpm` 폴더에 새로 설치된 `bar@6.1.3`의 의존성 패키지가 추가되었다.<br>
+- `node_modules`/`bar` 폴더가 생성되었고, `node_modules`/`.pnpm` 폴더에 새로 설치된 `bar@6.1.3`의 의존성 패키지가 추가되었다.<br>
 (이미 설치된 버전이 있다면, 새로 설치되지 않을 것으로 추측된다.)
 
 #### 3. bar@6.1.3 삭제
