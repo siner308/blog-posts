@@ -78,7 +78,7 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 ## pnpm
 
 #### 1. foo@39 설치
-- `foo@39` (정확히는 `googleapis@39.2.0`) 의 [package.json](https://github.com/googleapis/google-api-nodejs-client/blob/v39.2.0/package.json)에는 `bar@3.0.0`이 의존성으로 명시되었지만, `^3.0.0`으로 명시되어있기 때문에 3.0.0 이상 4.0.0이하의 버전중 최신버전인 `bar@3.1.2`가 설치되었다.
+- `foo@39` (정확히는 `googleapis@39.2.0`) 의 [package.json](https://github.com/googleapis/google-api-nodejs-client/blob/v39.2.0/package.json)에는 `bar@3.0.0`이 의존성으로 명시되었지만, `^3.0.0`으로 명시되어있기 때문에 `3.0.0>=` `<4.0.0`에 해당하는 버전중 최신버전인 `bar@3.1.2`가 설치되었다. [caret range](https://docs.npmjs.com/cli/v6/using-npm/semver#caret-ranges-123-025-004)참고
 
 ![스크린샷 2020-12-19 오후 7 57 24](https://user-images.githubusercontent.com/34048253/102687733-6aa71700-4234-11eb-947b-6454ee256e02.png)
 <img src="https://user-images.githubusercontent.com/34048253/102688760-17d15d80-423c-11eb-9b0d-99d5ce93daa9.png" width="400" />
