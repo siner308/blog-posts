@@ -61,7 +61,7 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 - `node_modules`/`bar` 경로에 `bar@3.0.0` 이 설치되었다.
 - `node_modules`/`foo`/`node_modules`/`bar`에는 똑같은 버전의 `bar@3.0.0`이 남아있어서 같은 버전의 패키지가 중복으로 존재하게 된다.
 
-## yarn
+## yarn (version 1을 다룹니다)
 
 #### 1. foo@39 설치
 - npm과 마찬가지로 node_modules 하위에 `foo`, `bar`가 flat하게 설치되었다.
@@ -105,16 +105,65 @@ const auth: OAuth2Client = new google.auth.OAuth2();
 #### 4. foo@39의 의존성으로 설치된 bar@3.1.2 수동으로 설치
 - `bar@3.1.2`를 수동으로 설치해본 결과, `.pnpm`에 존재하던 `bar@3.1.2`의 심볼릭 링크가 `node_modules`/`bar`로 생성되었다.
 
+# 추가자료 (yarn 2)
+
+<img src="https://user-images.githubusercontent.com/34048253/102710108-63930e00-42f3-11eb-8d20-cd806029f87c.png" width=600 />
+
+블로그 내용을 공유하던 도중 yarn 2의 정보를 알게 되었다.
+
+yarn 2는 한 폴더에 패키지를 몰아넣을 뿐만 아니라 `.yarn/cache` 폴더에 zip파일 형태로 관리하고 `.pnp.js` 파일에 해당 패키지(또는 의존성 패키지)의 `이름`, `버전`, `경로` 등의 정보를 저장하여 node_modules에서 발생하던 문제 뿐만 아니라, 각 패키지별 폴더 조차 생성하지 않아서 pnpm보다 더 좋아보인다.
+
+![yarn2](https://user-images.githubusercontent.com/34048253/102711977-0605be00-4301-11eb-8f6d-954da11ba180.gif)
+
+`import error (TS2307)` 의 해결방법은 잘 모르겠다
+
+```javascript
+// .pnp.js 파일의 일부
+function $$SETUP_STATE(hydrateRuntimeState, basePath) {
+  return hydrateRuntimeState({
+    "packageRegistryData": [
+      ["google-auth-library", [
+        ["npm:6.1.3", {
+          "packageLocation": "./.yarn/cache/google-auth-library-npm-6.1.3-ecb4934df9-ddf0289860.zip/node_modules/google-auth-library/",
+          "packageDependencies": [
+            ["google-auth-library", "npm:6.1.3"],
+            ...
+            ["lru-cache", "npm:6.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["googleapis", [ 
+        ["npm:66.0.0", {
+          "packageLocation": "./.yarn/cache/googleapis-npm-66.0.0-5fed4fcc24-b3d80d94e5.zip/node_modules/googleapis/",
+          "packageDependencies": [
+            ["googleapis", "npm:66.0.0"],
+            ["google-auth-library", "npm:6.1.3"],
+            ["googleapis-common", "npm:4.4.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]]
+    ]
+  }, {basePath: basePath || __dirname});
+}
+```
+
 # 결론
 
 dependency를 한곳에서 관리하면서 동일 버전의 중복생성이나 같은 이름 다른버전의 dependency 생성시 패키지가 삭제되었다가 다른 위치에 새로 생성되는 등의 불필요한 I/O 과정을 없애는 것으로 pnpm의 장점을 확실히 알게 되었다.
 
 이로써 reason-seoul 레포에서 설명한 탄소 절감 및 SSD의 수명을 위해서 pnpm을 사용한다는 이유도 충분히 납득이 되었다.
 
-하지만 pnpm 사용지 dependency가 설치되어있는 node_modules에 접근이 불가능한 점이 있는데, 애초에 npm, yarn사용시 그러한 디렉토리 접근이 제대로된 방법인지 의심되는 상황이었기 때문에, **pnpm의 사용을 적극 권장하고싶다.**
+하지만 pnpm 사용지 dependency가 설치되어있는 node_modules에 접근이 불가능한 점이 있는데, 애초에 npm, yarn사용시 그러한 디렉토리 접근이 제대로된 방법인지 의심되는 상황이었기 때문에,
+
+**pnpm의 사용을 적극 권장하고싶다.**
+
+**yarn2도 사용해보자!** 
 
 # 참고자료
 
 - [pnpm, 플랫하지 않은 패키지 매니저](https://imch.dev/posts/pnpm-a-manager-what-is-not-flat)
 - [NPM vs PNPM vs Yarn](https://rushjs.io/pages/maintainer/package_managers/)
 - [reason-seoul](https://github.com/reason-seoul/reason-todomvc)
+- [Yarn 2 발표](https://seungho.dev/yarn-2-announced/)
