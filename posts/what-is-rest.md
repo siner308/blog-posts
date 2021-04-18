@@ -82,7 +82,7 @@ multilingual: false
 
 **Request**
 
-```textmate
+```text
 POST http://mysite/users
 ```
 ```json
@@ -94,7 +94,7 @@ POST http://mysite/users
 
 **Response**
 
-```textmate
+```text
 HTTP/1.1 201 Created
 ```
 ```json
@@ -115,13 +115,13 @@ HTTP/1.1 201 Created
 
 **Request**
 
-```textmate
+```text
 GET http://mysite/users
 ```
 
 **Response**
 
-```textmate
+```text
 HTTP/1.1 200 OK
 ```
 ```json
@@ -154,13 +154,13 @@ HTTP/1.1 200 OK
 
 **Request**
 
-```textmate
+```text
 GET http://mysite/users/8
 ```
 
 **Response**
 
-```textmate
+```text
 HTTP/1.1 200 OK
 ```
 ```json
@@ -179,13 +179,13 @@ HTTP/1.1 200 OK
 `국적이 한국인 전체 사용자를 조회한다`와 같이 검색에 대한 요청은 알아보기 쉽게 표현이 가능합니다.
 
 **Request**
-```textmate
+```text
 GET http://mysite/users?country=한국
 ```
 
 **Response**
 
-```textmate
+```text
 HTTP/1.1 200 OK
 ```
 ```json
@@ -224,7 +224,7 @@ PUT 메서드는 수정보다는 **해당 id의 자원을 지금 보내는 자�
 
 **Request**
 
-```textmate
+```text
 PUT http://mysite/users/6
 ```
 ```json
@@ -236,7 +236,7 @@ PUT http://mysite/users/6
 
 **Response**
 
-```textmate
+```text
 HTTP/1.1 200 OK
 ```
 ```json
@@ -264,7 +264,7 @@ HTTP/1.1 200 OK
 ```
 
 **Request**
-```textmate
+```text
 PATCH http://mysite/users/8
 ```
 ```json
@@ -275,7 +275,7 @@ PATCH http://mysite/users/8
 ```
 
 **Response**
-```textmate
+```text
 HTTP/1.1 200 OK
 ```
 ```json
@@ -294,12 +294,12 @@ HTTP/1.1 200 OK
 
 **Request**
 
-```textmate
+```text
 DELETE http://mysite/users/1
 ```
 
 **Response**
 
-```textmate
+```text
 HTTP/1.1 200 OK
 ```

@@ -30,20 +30,20 @@ multilingual: false
 
 ---
 - **연속적인** 라인이라서 무효:
-```textmate
+```text
 \# direc \
 tive=value
 ```
 
 - **같은 지시문이 두번** 적혀서 무효:
-```textmate
+```text
 # directive=value1
 # directive=value2
 FROM ImageName
 ```
 
 - **빌더 명령어 이후**에 적혀서 주석으로 간주함:
-```textmate
+```text
 FROM ImageName
 # directive=value
 ```
