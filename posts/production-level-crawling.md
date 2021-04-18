@@ -99,8 +99,23 @@ async function clearBrowserData(driver: WebDriver): Promise<WebDriver> {
 
 ![image](https://user-images.githubusercontent.com/34048253/115137345-97dbc880-a060-11eb-9145-2a5ca5bc220a.png)
 
-그러던 도중 chromeOptions에 disk-cache-size를 정할 수 있는 방법이 있다는 것을 찾았고, 바로 적용해보았다.
- 방법을 선택함 -> 메모리 증가 현상이 계속 있긴 했지만, 크롤러가 끝날때까지는 안정적인 상태를 유지하게 되어 운영 단계에서 일단 사용할수 있다고 판단.
+그러던 도중 chromeOptions에 disk-cache-size를 정할 수 있는 방법이 있다는 것을 찾았고, 아래의 코드가 그 결과이다.
+메모리 증가 현상이 계속 있긴 했지만, 크롤러가 끝날때까지는 안정적인 상태를 유지하게 되어 운영 단계에서 일단 사용할수 있다고 판단했다.
+
+```typescript
+async function getNewDriver(driver?: WebDriver): Promise<WebDriver> {
+  if (driver) await driver.quit();
+  // init browser
+  const options: Options = new Options();
+  options.headless();
+  options.addArguments('--disable-dev-shm-usage');
+  options.addArguments('--disable-gpu');
+  options.addArguments('--no-sandbox');
+  options.setUserPreferences({ 'disk-cache-size': 4096 });
+  options.windowSize({ width: 1920, height: 1080 });
+  return new Builder().forBrowser('chrome').setChromeOptions(options).build();
+}
+```
  
 ![image](https://user-images.githubusercontent.com/34048253/115137416-f99c3280-a060-11eb-8998-29af27199b93.png)
 
