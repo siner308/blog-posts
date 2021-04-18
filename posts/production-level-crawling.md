@@ -44,7 +44,7 @@ else:
   chromedriver_path = '/app/chromedriver' # linux 배포시 도커 이미지 환경이므로 WORKDIR이 app으로 되어있다
 ```
 
-npm으로 관리시엔 mac, linux 구분없이 node_modules/chromedriver 하위 경로에 바이너리가 자동으로 설치되고, 우리가 이걸 몰라도 상관 없도록 설계되어 있었다. 다만 터미널 등의 npm 환경이 아닌 곳에서 노드를 실행한다면, PATH에 node_modules/.bin이 포함되지 않아서 바이너리를 찾지 못했다.
+npm으로 관리시엔 mac, linux 구분없이 `node_modules/chromedriver` 하위 경로에 바이너리가 자동으로 설치되고, 우리가 이걸 몰라도 상관 없도록 설계되어 있었다. 다만 터미널 등의 npm 환경이 아닌 곳에서 노드를 실행한다면, PATH에 `node_modules/.bin`이 포함되지 않아서 바이너리를 찾지 못했다.
 
 ![image](https://user-images.githubusercontent.com/34048253/115136647-079b8480-a05c-11eb-9222-c316cddf21ff.png)
 ![image](https://user-images.githubusercontent.com/34048253/115136769-ec7d4480-a05c-11eb-865f-fd85078501d9.png)
@@ -61,10 +61,13 @@ ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-
 
 ## 2. production(컨테이너) 레벨에서의 죽지않는 크롤러 만들기 (컨테이너의 메모리 관리 aka 브라우저 캐시데이터 관리)
 코드 작성이 거의 마무리되고, aws batch를 통해 운영 테스트를 하던 도중, 메모리 릭이 있는것을 발견했다.
+
 ![image](https://user-images.githubusercontent.com/34048253/115136984-4cc0b600-a05e-11eb-857c-b7bee361633a.png)
 
 로컬에서 컨테이너를 모니터링 해본 결과, 계속해서 zombie 프로세스가 생기는 것을 발견하였다.
+
 ![image](https://user-images.githubusercontent.com/34048253/115137501-7fb87900-a061-11eb-9ac4-b88751a6a224.png)
+
 확인해본 결과 headless 브라우저는 driver.quit() api가 제대로 동작하지 않는 것을 확인하였다.
 하나의 브라우저로 계속 크롤링 작업을 했을때 어느 순간 크롤링이 중단되는 문제를 발견하였고, 이를 포함하여 예상치 못한 변수들을 통제하기 위해 일정 주기로 브라우저를 종료 후 다시 실행시키도록 코드를 작성하였는데, 종료가 되지 않고 좀비 프로세스만 늘어나는 상황이 발생한 것이다...
 
@@ -93,10 +96,12 @@ async function clearBrowserData(driver: WebDriver): Promise<WebDriver> {
 
 [chromium](https://source.chromium.org/chromium/chromium/src/+/master:README.md) 오픈소스를 살펴보면서 [setCacheCapacity](https://source.chromium.org/chromium/chromium/src/+/master:components/web_cache/renderer/web_cache_impl.cc;l=40;bpv=0;bpt=1) 라는 함수를 찾아보기도 했으나, 마땅한 해결책은 보이지 않았다.
 컨테이너 내부의 /tmp 경로에 있는 크롬 디렉터리에 캐시데이터가 쌓이는 것을 발견하긴 했지만, 운영 도중 cli로 계속해서 cache를 지우는 방법보다 세련된 방법을 찾고싶었다. (cache 경로에 포함된 hash값을 예측하기 힘든 것도 번거로운 점이었고, 삭제로 인해 또 다른 문제가 발생할 수도 있지 않겠는가...)
+
 ![image](https://user-images.githubusercontent.com/34048253/115137345-97dbc880-a060-11eb-9145-2a5ca5bc220a.png)
 
 그러던 도중 chromeOptions에 disk-cache-size를 정할 수 있는 방법이 있다는 것을 찾았고, 바로 적용해보았다.
  방법을 선택함 -> 메모리 증가 현상이 계속 있긴 했지만, 크롤러가 끝날때까지는 안정적인 상태를 유지하게 되어 운영 단계에서 일단 사용할수 있다고 판단.
+ 
 ![image](https://user-images.githubusercontent.com/34048253/115137416-f99c3280-a060-11eb-8998-29af27199b93.png)
 
 위 이미지는 1시간마다 batch job을 실행시킨 결과이다. 하나의 job당 5시간정도 크롤링을 수행하기 때문에 초기 리소스 증가는 어느정도 용인이 가능하다.
