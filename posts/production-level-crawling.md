@@ -31,7 +31,7 @@ multilingual: false
 
 
 ## 1. python 크롤링 vs javascript(typescript) 크롤링
-python을 사용한 크롤링 환경 구성시 [google-chrome-stable_current_amd64.deb](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)과 [chromedriver](https://chromedriver.chromium.org/downloads) 두가지를 외부 저장소를 통해 받아야 하고, pip를 통해 selenium을 설치해야하고, 
+python을 사용한 크롤링 환경 구성시 [`google-chrome-stable_current_amd64.deb`](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)과 [`chromedriver`](https://chromedriver.chromium.org/downloads) 두가지를 외부 저장소를 통해 받아야 하고, pip를 통해 selenium을 설치해야하고, 
 javascript에서는 google-chrome-stable는 똑같이 외부로부터 받아야 하지만, chromedriver과 selenium을 npm을 통해 받을 수 있다는 차이가 있다.
 
 이로 인해 두가지가 편해졌는데, 그중 한가지는 chromedriver 바이너리 파일 관리가 편해졌다는 점이다.
@@ -50,7 +50,7 @@ npm으로 관리시엔 mac, linux 구분없이 `node_modules/chromedriver` 하�
 ![image](https://user-images.githubusercontent.com/34048253/115136769-ec7d4480-a05c-11eb-865f-fd85078501d9.png)
 
 두번째로 편해진 점은, google-chrome-stable 패키지의 버전 추적이 쉬워졌다는 점이다.
-컨테이너 이미지 빌드시에 google-chrome-stable_current_amd64.deb 설치파일을 매번 외부로부터 받아야 한다면, latest 버전을 받게 될텐데, chromedriver와 버전이 일치해야 실행이 가능하기 때문에 미리 받아둔 설치파일을 repository에 넣어두는 방식을 선호하고있다.
+컨테이너 이미지 빌드시에 `google-chrome-stable_current_amd64.deb` 설치파일을 매번 외부로부터 받아야 한다면, latest 버전을 받게 될텐데, chromedriver와 버전이 일치해야 실행이 가능하기 때문에 미리 받아둔 설치파일을 repository에 넣어두는 방식을 선호하고있다.
 구 버전의 google-chrome-stable 설치파일에 대한 다운로드 url도 제공하고 있는것 같긴 하지만, 이렇게 되면 도커 이미지 빌드 시간도 길어질 뿐더러 마이너 버전까지 상세하게 기입해야 다운로드가 되는 것 같아서 선호하지 않는다. (또한, dl.google.com은 정확한 url이 아니면 접속할 수 없어서 유효한 링크를 찾는 과정이 번거롭다)
 
 그렇기 때문에, npm에 chromedriver의 버전을 기입해 둘 수 있다는 점이 참 편리하다고 느껴졌다. 항상 버전을 확인하려면 cli를 사용해야 했기 때문에...
