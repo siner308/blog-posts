@@ -22,7 +22,7 @@ multilingual: false
 
 도메인을 먼저 정하는게 중요했는데, 떡볶이의 영어발음인 tteokbokki는 너무 길고, 한국인이 저 철자를 다 외우는 사람이 많지는 않다고 생각되어 ttbkk.com라는 간단한 도메인을 구입했다. (12달러로 .com치고는 매우 저렴했다)
 
-<div style='display: flex'>
+<div style='display: flex,flex: wrap'>
 <img src="https://user-images.githubusercontent.com/34048253/126061820-33aeb796-379f-4273-ae05-31e890a14a4a.png" height=500 />
 <img src="https://user-images.githubusercontent.com/34048253/126061823-c16daeb8-b772-469d-8bdd-fb663113418e.png" height=500 />
 </div>
@@ -34,7 +34,7 @@ typescript는 지도 라이브러리를 사용하기에 매우 불편했다... �
 
 ![image](https://user-images.githubusercontent.com/34048253/126062310-5a97bc2e-4f1f-4b33-9c3a-f82f0c819d4d.png)
 
-<div style='display: flex'>
+<div style='display: flex,flex: wrap'>
 <img src="https://user-images.githubusercontent.com/34048253/126061824-b2a03aba-3a24-4e0a-983a-c833554dc67e.png" height=400 />
 <img src="https://user-images.githubusercontent.com/34048253/126062647-f1cf1cc5-7859-44a5-bbe3-a0bfa1d8e395.png" height=500 />
 </div>
