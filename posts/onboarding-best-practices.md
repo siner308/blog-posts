@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[번역] 새로 입사하는 개발자분들을 위한 최고의 온보딩 가이드: 산업의 Best Practices와 첫 90일을 어떻게 계획할 것인지에 대하여."
-subtitle: "The Ultimate Guide to Onboarding New Developers: Industry Best Practices and How to Plan the First 90 Days"
+title:  "[번역] 새로 입사하는 개발자분들을 위한 최고의 온보딩 가이드"
+subtitle: "온보딩 Best Practices와 첫 90일을 어떻게 계획할 것인지에 대하여."
 author: "Siner"
 catalog: true
 header-mask:  0.3
