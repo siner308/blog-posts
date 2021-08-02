@@ -11,6 +11,7 @@ multilingual: false
 ---
 
 ## remove all keys
+[flushall](https://redis.io/commands/FLUSHALL)
 
 ```bash
 redis> flushall
