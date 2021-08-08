@@ -16,3 +16,8 @@ multilingual: false
 $git clean -f # files only
 $git clean -fd # include directories
 ```
+
+## ignore already committed files 
+```bash
+$ git rm -r --cached . # remove cache
+$ git add . # add without ignored files
