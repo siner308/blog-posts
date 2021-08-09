@@ -449,26 +449,39 @@ DIP는, 액션을 수행할때 클래스가 도구와 융합되면 안된다고 
 
 #### 예제 코드 (Bad Case)
 ```typescript
-class HelloWorldOnlyRobot {
-  public work() {
-    console.log('Hello World!');
+class GuideRobot {
+  public work(): void {
+    // working logic
   }
 }
+
+const robot: GuideRobot = new GuideRobot(); // type이 GuideRobot이 되었다
+robot.work();
 ```
 
 #### 예제 코드 (Good Case)
 ```typescript
-class FlexibleRobot {
-  public workType: string;
+interface Robot {
+  work(): void;
+}
 
-  constructor(workType: string) {
-    this.workType = workType;
-  }
-
-  public work() {
-    console.log(`I'm doing ${this.workType}.`);
+class GuideRobot implements Robot {
+  work(): void {
+    // guiding logic
   }
 }
+
+class CookingRobot implements Robot {
+  work(): void {
+    // cooking logic
+  }
+}
+
+const robot1: Robot = GuideRobot();
+robot1.work(); // guiding logic
+
+const robot2: Robot = CookingRobot();
+robot2.work(); // cooking logic
 ```
 
 ## 요약
