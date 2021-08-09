@@ -477,10 +477,10 @@ class CookingRobot implements Robot {
   }
 }
 
-const robot1: Robot = GuideRobot();
+const robot1: Robot = new GuideRobot();
 robot1.work(); // guiding logic
 
-const robot2: Robot = CookingRobot();
+const robot2: Robot = new CookingRobot();
 robot2.work(); // cooking logic
 ```
 
