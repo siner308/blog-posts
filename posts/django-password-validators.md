@@ -39,9 +39,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 유저의 attributes(username, first_nae, last_name, email)를 정규표현식으로 split한 후 각각의 value_part에 대해 유사도를 측정하고, 유사도가 max_similarity(default: 0.7)이상인 경우 validation error를 발생시킵니다. 유사도 측정에는 [SequenceMatcher](https://docs.python.org/ko/3/library/difflib.html#difflib.SequenceMatcher.quick_ratio)를 사용합니다.
 
-<details>
-<summary style='color: blue'>코드보기</summary>
-
 ```python
 class UserAttributeSimilarityValidator:
     """
@@ -84,14 +81,10 @@ class UserAttributeSimilarityValidator:
     def get_help_text(self):
         return _('Your password can’t be too similar to your other personal information.')
 ```
-</details>
 
 ## 2. MinimumLengthValidator
 
 password의 길이가 min_length(default: 8)보다 작다면 validatoion error를 발생시킵니다.
-
-<details>
-<summary style='color: blue'>코드보기</summary>
 
 ```python
 class MinimumLengthValidator:
@@ -120,14 +113,10 @@ class MinimumLengthValidator:
             self.min_length
         ) % {'min_length': self.min_length}
 ```
-</details>
 
 ## 3. CommonPasswordValidator
 
 [사람들이 가장 많이 사용하는 패스워드 20000개](https://gist.github.com/roycewilliams/281ce539915a947a23db17137d91aeb7)에 해당하는 경우 validator error를 발생시킵니다. 2000개의 패스워드는 gzip으로 압축되어 django프로젝트에 내장되어있습니다. (django/contrib/auth/common-passwords.txt.gz)
-
-<details>
-<summary style='color: blue'>코드보기</summary>
 
 ```python
 class CommonPasswordValidator:
@@ -160,14 +149,10 @@ class CommonPasswordValidator:
     def get_help_text(self):
         return _('Your password can’t be a commonly used password.')
 ```
-</details>
 
 ## 4. NumericPasswordValidator
 
 password가 숫자로만 이루어진 경우 validation error를 발생시킵니다.
-
-<details>
-<summary style='color: blue'>코드보기</summary>
 
 ```python
 class NumericPasswordValidator:
@@ -184,4 +169,3 @@ class NumericPasswordValidator:
     def get_help_text(self):
         return _('Your password can’t be entirely numeric.')
 ```
-</details>
