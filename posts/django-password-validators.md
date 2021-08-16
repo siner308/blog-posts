@@ -37,7 +37,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ## 1. UserAttributeSimilarityValidator
 
-유저의 attributes(username, first_nae, last_name, email)를 정규표현식으로 split한 후 각각의 value_part에 대해 유사도를 측정하고, 유사도가 max_similarity(default: 0.7)이상인 경우 validation error를 발생시킵니다. 유사도 측정에는 [SequenceMatcher](https://docs.python.org/ko/3/library/difflib.html#difflib.SequenceMatcher.quick_ratio)를 사용합니다.
+유저의 attributes(username, first_name, last_name, email)를 정규표현식으로 split한 후 각각의 value_part에 대해 유사도를 측정하고, 유사도가 max_similarity(default: 0.7)이상인 경우 validation error를 발생시킵니다. 유사도 측정에는 [SequenceMatcher](https://docs.python.org/ko/3/library/difflib.html#difflib.SequenceMatcher.quick_ratio)를 사용합니다.
 
 ```python
 class UserAttributeSimilarityValidator:
