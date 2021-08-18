@@ -29,4 +29,4 @@ multilingual: false
 
 Buildkit 백엔드를 사용하려면 `docker build` 명령어를 사용하게 전에 CLI를 통해 `DOCKER_BUILDKIT=1`이라는 환경변수를 지정해야합니다.
 
-Buildkit 기반의 빌드를 가능하게 하는 실험적인 도커파일 문법은 [BuildKit 저장소의 문서](https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md)를 참조해주세요.
+Buildkit 기반의 빌드를 가능하게 하는 실험적인 도커파일 문법은 [BuildKit 저장소의 문서](https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/syntax.md#dockerfile-frontend-syntaxes)를 참조해주세요.
