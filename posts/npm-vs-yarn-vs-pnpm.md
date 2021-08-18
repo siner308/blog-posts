@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "npm vs yarn vs pnpm"
+title:  "npm vs yarn vs pnpm vs yarn2"
 subtitle: "pnpm은 정말로 탄소절감과 ssd수명에 도움을 줄까?"
 author: "Siner"
 catalog: true
@@ -155,7 +155,7 @@ dependency를 한곳에서 관리하면서 동일 버전의 중복생성이나 �
 
 이로써 reason-seoul 레포에서 설명한 탄소 절감 및 SSD의 수명을 위해서 pnpm을 사용한다는 이유도 충분히 납득이 되었다.
 
-하지만 pnpm 사용지 dependency가 설치되어있는 node_modules에 접근이 불가능한 점이 있는데, 애초에 npm, yarn사용시 그러한 디렉토리 접근이 제대로된 방법인지 의심되는 상황이었기 때문에,
+하지만 pnpm 사용시 dependency가 설치되어있는 node_modules에 접근이 불가능한 점이 있는데, 애초에 npm, yarn사용시 그러한 디렉토리 접근이 제대로된 방법인지 의심되는 상황이었기 때문에,
 
 **pnpm의 사용을 적극 권장하고싶다.**
 
