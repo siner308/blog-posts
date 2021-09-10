@@ -60,5 +60,5 @@ crontab이 실행되면 클라우드와 마운트 되어 있는 폴더에 백업
 
 ## reference
 - rclone: [https://rclone.org](https://rclone.org)
-- 참고한 블로그: [https://hoodiejun.tistory.com/19](https://hoodiejun.tistory.com/19)
-- 무제한 구글드라이브 스토리지 계정을 제공하는 대학교 리스트:  [https://namu.wiki/w/Google%20Workspace#s-5](https://namu.wiki/w/Google%20Workspace#s-5)
+- rclone 으로 google drive 로컬 드라이브 만들기 (리눅스): [https://hoodiejun.tistory.com/19](https://hoodiejun.tistory.com/19)
+- G Suite for Education:  [https://namu.wiki/w/Google%20Workspace#s-5](https://namu.wiki/w/Google%20Workspace#s-5)
