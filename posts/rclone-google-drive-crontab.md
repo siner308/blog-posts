@@ -61,4 +61,4 @@ crontab이 실행되면 클라우드와 마운트 되어 있는 폴더에 백업
 ## reference
 - rclone: [https://rclone.org](https://rclone.org)
 - 참고한 블로그: [https://hoodiejun.tistory.com/19](https://hoodiejun.tistory.com/19)
-- 무제한 구글드라이브 스토리지 계정을 제공하는 대학교 리스트:  [https://namu.wiki/w/Google%20Workspace#fn-7](https://namu.wiki/w/Google%20Workspace#fn-7)
+- 무제한 구글드라이브 스토리지 계정을 제공하는 대학교 리스트:  [https://namu.wiki/w/Google%20Workspace#s-5](https://namu.wiki/w/Google%20Workspace#s-5)
