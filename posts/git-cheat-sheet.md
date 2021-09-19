@@ -21,3 +21,9 @@ $git clean -fd        # include directories
 ```bash
 $git rm -r --cached . # remove cache
 $git add .            # add without ignored files
+```
+
+## remove cached credential
+```bash
+$git config --global --unset credential.helper
+```
