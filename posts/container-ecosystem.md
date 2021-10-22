@@ -65,8 +65,8 @@ OCI를 준수하는 저수준 컨테이너 런타임으로 가장 잘 알려진 
 이처럼 컨테이너를 실행하려면 저수준 및 고수준 컨테이너 런타임이 필요하기 때문에 OCI 런타임과 함께 도커가 그 역할을 했습니다. 도커는 containerd라는 가장 잘 알려진 고수준 컨테이너 런타임을 제공합니다. containerd도 runC와 마찬가지로 도커에서 컨테이너를 실행하기 위해 개발되었으나, 나중에 독립적인 라이브러리로 추출되었습니다.
 
 <div style="display:flex">
-  <img src="https://user-images.githubusercontent.com/34048253/138473714-f4ad6361-99d6-4d02-9cfa-9fefeff89d07.png" width=350 />
-  <img src="https://user-images.githubusercontent.com/34048253/138473740-d6581dda-9a95-4bef-b211-d41f540acaf6.png" width=350 />
+  <img src="https://user-images.githubusercontent.com/34048253/138473714-f4ad6361-99d6-4d02-9cfa-9fefeff89d07.png" width=250 />
+  <img src="https://user-images.githubusercontent.com/34048253/138473740-d6581dda-9a95-4bef-b211-d41f540acaf6.png" width=500 />
 </div>
 
 containerd와 CRI-O 이 두가지 Container Runtime이 현재 가장 널리 사용되고 있으며 containerd는 Docker Engine에 기본으로 탑재되어 있어서 지금도 Docker를 사용한다면 내부적으로 사용되는 Container Runtime은 containerd 를 사용하게 됩니다. 참고로 `docker build` 커맨드로 생성되는 이미지들 역시 OCI Image Spec을 준수하기 때문에 별도의 작업없이 containerd로 실행시킬 수 있습니다.
