@@ -6,9 +6,9 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-- api
-- ttbkk
-- ux
+    - api
+    - ttbkk
+    - ux
 date:   2021-10-24
 multilingual: flase
 ---

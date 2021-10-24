@@ -7,7 +7,8 @@ header-img: "img/post_headers/2019-05-20-what3words.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - Python
+    - python
+    - map
 date:   2019-05-20
 multilingual: false
 ---

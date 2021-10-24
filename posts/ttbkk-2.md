@@ -6,10 +6,10 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - Golang
-    - Slack
-    - Monitoring
-    - Serverless
+    - golang
+    - slack
+    - monitoring
+    - serverless
 date:   2021-09-26
 multilingual: flase
 ---

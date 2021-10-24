@@ -7,8 +7,8 @@ header-img: "img/post_headers/2020-06-18-solid-principles.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - Architecture
-    - OOP
+    - architecture
+    - oop
 date:   2020-06-18
 multilingual: false
 ---

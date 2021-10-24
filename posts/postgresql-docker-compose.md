@@ -7,9 +7,9 @@ header-img: "img/post_headers/2019-03-02-postgresql-docker-compose.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - PostgreSQL
-    - Docker
-    - Database
+    - postgresql
+    - docker
+    - database
 date:   2019-03-02
 multilingual: false
 ---

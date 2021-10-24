@@ -4,7 +4,7 @@ title:  "[Dart Programming] final과 const의 차이점"
 subtitle: "상수를 표현하는 두가지 방법"
 author: "Siner"
 tags:
-    - Dart
+    - dart
 date:   2020-12-08
 multilingual: false
 ---

@@ -6,8 +6,8 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - Javascript
-    - Typescript
+    - javascript
+    - typescript
 date:   2020-12-19
 multilingual: false
 ---

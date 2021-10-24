@@ -7,9 +7,9 @@ header-img: "img/post_headers/2019-02-25-django-docker-custom-image.jpg"
 catalog: true
 header-mask:  0.3
 tags:
-    - Python
-    - Django
-    - Docker
+    - python
+    - django
+    - docker
 date:   2019-02-25
 multilingual: false
 ---
