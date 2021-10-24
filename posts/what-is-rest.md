@@ -7,8 +7,8 @@ header-img: "img/post_headers/2020-01-27-what-is-rest.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - HTTP
-    - Architecture
+    - http
+    - architecture
 date:   2020-01-27
 multilingual: false
 ---

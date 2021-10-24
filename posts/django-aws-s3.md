@@ -7,12 +7,12 @@ header-img: "img/post_headers/2019-07-17-django-aws-s3.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - Python
-    - Django
-    - AWS
-    - S3
-    - Storage
-    - Cloud
+    - python
+    - django
+    - aws
+    - s3
+    - storage
+    - cloud
 date:   2019-07-17
 multilingual: false
 ---

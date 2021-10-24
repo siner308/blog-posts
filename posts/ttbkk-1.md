@@ -6,10 +6,9 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - Javascript
-    - Typescript
-    - TTBKK
-    - tteokbokki
+    - javascript
+    - typescript
+    - ttbkk
 date:   2021-07-18
 multilingual: false
 ---

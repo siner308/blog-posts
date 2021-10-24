@@ -6,14 +6,11 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - Crawling
-    - Typescript
-    - Chromedriver
-    - Selenium
-    - Docker
-    - ECS
-    - BATCH
-    - AWS
+    - crawling
+    - typescript
+    - container
+    - batch
+    - aws
 date:   2021-04-18
 multilingual: false
 ---

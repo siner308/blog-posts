@@ -7,8 +7,8 @@ header-img: "img/post_headers/2020-02-23-singleton-pattern.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - HTTP
-    - Architecture
+    - http
+    - architecture
 date:   2020-02-23
 multilingual: false
 ---

@@ -7,10 +7,10 @@ header-img: "img/post_headers/2020-01-04-express-middleware.jpeg"
 catalog: true
 header-mask:  0.3
 tags:
-    - Express
-    - Javascript
-    - Framework
-    - Middleware
+    - express
+    - javascript
+    - framework
+    - middleware
 date:   2020-01-04
 multilingual: false
 ---

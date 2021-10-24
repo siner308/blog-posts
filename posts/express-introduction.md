@@ -7,9 +7,9 @@ header-img: "img/post_headers/2020-01-03-express-introduction.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - Express
-    - Javascript
-    - Framework
+    - express
+    - javascript
+    - framework
 date:   2020-01-03
 multilingual: false
 ---

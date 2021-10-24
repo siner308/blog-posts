@@ -6,10 +6,9 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - Django
-    - Auth
-    - Validator
-    - TIL
+    - django
+    - auth
+    - validator
 date:   2021-08-16
 multilingual: false
 ---
