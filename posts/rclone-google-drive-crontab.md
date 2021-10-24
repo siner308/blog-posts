@@ -11,6 +11,7 @@ tags:
     - database
     - rclone
     - google drive
+    - storage
 date:   2021-09-10
 multilingual: flase
 ---
