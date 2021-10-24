@@ -65,8 +65,8 @@ OCI를 준수하는 저수준 컨테이너 런타임으로 가장 잘 알려진 
 이처럼 컨테이너를 실행하려면 저수준 및 고수준 컨테이너 런타임이 필요하기 때문에 OCI 런타임과 함께 도커가 그 역할을 했습니다. 도커는 containerd라는 가장 잘 알려진 고수준 컨테이너 런타임을 제공합니다. containerd도 runC와 마찬가지로 도커에서 컨테이너를 실행하기 위해 개발되었으나, 나중에 독립적인 라이브러리로 추출되었습니다.
 
 <div style="display:flex">
-  <img src="https://user-images.githubusercontent.com/34048253/138473714-f4ad6361-99d6-4d02-9cfa-9fefeff89d07.png" width=250 />
-  <img src="https://user-images.githubusercontent.com/34048253/138473740-d6581dda-9a95-4bef-b211-d41f540acaf6.png" width=500 />
+  <img src="https://user-images.githubusercontent.com/34048253/138473714-f4ad6361-99d6-4d02-9cfa-9fefeff89d07.png" width="33%" />
+  <img src="https://user-images.githubusercontent.com/34048253/138473740-d6581dda-9a95-4bef-b211-d41f540acaf6.png" width="66%" />
 </div>
 
 containerd와 CRI-O 이 두가지 Container Runtime이 현재 가장 널리 사용되고 있으며 containerd는 Docker Engine에 기본으로 탑재되어 있어서 지금도 Docker를 사용한다면 내부적으로 사용되는 Container Runtime은 containerd 를 사용하게 됩니다. 참고로 `docker build` 커맨드로 생성되는 이미지들 역시 OCI Image Spec을 준수하기 때문에 별도의 작업없이 containerd로 실행시킬 수 있습니다.
@@ -92,9 +92,9 @@ Docker에서 만든 Container Runtime이 바로 containerd 입니다[.](https://
 이렇게 Container Runtime이 Monolithic 아키텍처에서 분리되어 나오면서 Java 어플리케이션을 배포할 때 JDK보다 가벼운 JRE를 사용하는 것처럼 (물론 이 경우에는 보안과 같은 다른 이유도 있습니다만) 컨테이너를 실행할 때 무거운 Docker Engine이 아닌 containerd나 CRI-O와 같은 가벼운 Container Runtime을 사용하게 되면서 다음과 같은 장점도 나타나게 되었습니다.
 
 <div style="display:flex">
-  <img src="https://user-images.githubusercontent.com/34048253/138473928-a10b088f-626f-4e5a-a569-5012007460c4.png" width=250 />
-  <img src="https://user-images.githubusercontent.com/34048253/138473953-30150760-420d-4c08-8daa-626639ff0dca.png" width=250 />
-  <img src="https://user-images.githubusercontent.com/34048253/138473976-4f5f6a10-bbc5-421e-9503-91d425c2b460.png" width=250 />
+  <img src="https://user-images.githubusercontent.com/34048253/138473928-a10b088f-626f-4e5a-a569-5012007460c4.png" width="33%" />
+  <img src="https://user-images.githubusercontent.com/34048253/138473953-30150760-420d-4c08-8daa-626639ff0dca.png" width="33%" />
+  <img src="https://user-images.githubusercontent.com/34048253/138473976-4f5f6a10-bbc5-421e-9503-91d425c2b460.png" width="33%" />
 </div>
 
 쉽게 말해 containerd로의 전환을 통해 Pod은 더 빨리 시작되고, CPU와 메모리의 사용량은 더 줄었다는 이야기로, containerd로의 전환이 왜 일어나고 있는지를 잘 설명해주고 있습니다.
