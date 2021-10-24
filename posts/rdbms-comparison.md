@@ -51,7 +51,9 @@ AWS도 메인 DB를 오라클에서 다른 오픈소스 DB로 교체하는 계�
     - 과거 시점의 데이터 조회도 가능
     ex) SELECT * FORM 고객 AS OF TIMESTAMP (SYSTIMESTAMP - INTERVAL '1' HOUR)
     - 특정 시점에 존재했던 레코드를 조회해 새로운 테이블을 생성-추가 할 수 있음
-    ex) CREATE TABLE 고객_BACKUP AS SELECT * FROM 고객 AS OF TIMESTAMP TO_DATE(‘201501101020’, ‘YYYYMMDDHH24MI’)
+    ```
+    CREATE TABLE 고객_BACKUP AS SELECT * FROM 고객 AS OF TIMESTAMP TO_DATE(‘201501101020’, ‘YYYYMMDDHH24MI’)
+    ```
   - GATHER_PLAN_STATISTICS
     - SQL Trace를 수행하지 않고도 쿼리 plan을 단계별로 get block을 알수있다. 쿼리 성능을 확인-비교 할 수 있기 때문에 튜닝할때 아주 빈번하게 쓰인다고 한다.
                 
@@ -133,7 +135,7 @@ AWS도 메인 DB를 오라클에서 다른 오픈소스 DB로 교체하는 계�
 
   - 16진수 상수
         
-        MSSQL에서는 integer로 제대로 반환해주었지만, MYSQL에서는 string으로 판단했음
+MSSQL에서는 integer로 제대로 반환해주었지만, MYSQL에서는 string으로 판단했음
         
 ![image](https://user-images.githubusercontent.com/34048253/136787956-b4ca518b-e78e-41ec-b812-401d53bf4e92.png)
 
