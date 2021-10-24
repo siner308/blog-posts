@@ -24,7 +24,7 @@ multilingual: flase
 Oracle, InnoDB에서 사용하는 방식으로 **Undo** 라는 영역을 따로 두고 최신 데이터는 데이터 영역에 두고 올드 버전만 Undo 영역에 두어 레코드 갱신에 대한 버전관리를 하는 방식이다. 이것은 1980년대에 오라클의 밥 마이너가 구현한 방식이다.
 만약, 변경 작업이 완료되지 않은 상태에서 다른 세션이 같은 영역에 읽기 작업을 하려고 한다면, DBMS는 각 레코드의 SCN 정보를 확인하여 Undo 영역을 찾아서 해당 버전의 레코드를 가져와 메모리에 로드하고 읽을 수 있게 처리해 준다.
 
-<img src="https://user-images.githubusercontent.com/34048253/136663619-e075a596-8a8b-4106-81ab-7775a651e036.png" width=500/>
+<img src="https://user-images.githubusercontent.com/34048253/136663619-e075a596-8a8b-4106-81ab-7775a651e036.png" width="66%"/>
 
 - [https://mysqldba.tistory.com/335](https://mysqldba.tistory.com/335)
 - [https://joont92.github.io/db/MVCC/](https://joont92.github.io/db/MVCC/)
