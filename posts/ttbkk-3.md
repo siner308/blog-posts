@@ -28,13 +28,11 @@ multilingual: flase
 
 만약 bound내의 데이터가 355개이고 limit을 100으로 가정한다면 아래와 같다.
 
-```text
 1. /count 로 요청하여 355라는 값을 얻는다.
-2-1. /places?page=1&limit=100 으로 요청하여 100개의 데이터를 가져오고, 화면에 뿌려준다.
-2-2. /places?page=2&limit=100 으로 요청하여 100개의 데이터를 가져오고, 화면에 뿌려준다.
-2-3. /places?page=3&limit=100 으로 요청하여 100개의 데이터를 가져오고, 화면에 뿌려준다.
-2-4. /places?page=4&limit=100 으로 요청하여 55개의 데이터를 가져오고, 화면에 뿌려준다.
-```
+2. /places?page=1&limit=100 으로 요청하여 100개의 데이터를 가져오고, 화면에 뿌려준다.
+3. /places?page=2&limit=100 으로 요청하여 100개의 데이터를 가져오고, 화면에 뿌려준다.
+4. /places?page=3&limit=100 으로 요청하여 100개의 데이터를 가져오고, 화면에 뿌려준다.
+5. /places?page=4&limit=100 으로 요청하여 55개의 데이터를 가져오고, 화면에 뿌려준다.
 
 <div>
   <video width=100% controls title="API 적용 결과 (서울)">
