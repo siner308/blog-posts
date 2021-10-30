@@ -37,7 +37,7 @@ sentry를 사용하는건 간단하지만 실시간으로 noti를 받으려면  
 slack api를 frontend에서 직접 요청하는것은 api token의 노출 등의 위험이 있기 때문에 클라이언트에서는 aws lambda로 api를 호출하고, lambda에서 slack으로 알림을 전송하는 식으로 구현하고자 했습니다.
 
 홈서버에 장애가 발생한 상황에서도, aws lambda를 통해 slack으로 장애관련 noti를 받을 수 있게 됩니다.
-<img src="https://user-images.githubusercontent.com/34048253/134799280-8708fa31-c456-48e6-b9d2-9d7ccd7845ec.png" width=600 />
+<img src="https://user-images.githubusercontent.com/34048253/134799280-8708fa31-c456-48e6-b9d2-9d7ccd7845ec.png" width=80% />
 
 ## 코드 작성
 알림을 받을 채널이 당장은 slack밖에 없었지만, 인터페이스를 분리하여 추후에 메일 등을 통해서도 알림을 받을 수 있도록 처리했습니다.
