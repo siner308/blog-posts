@@ -16,14 +16,14 @@ multilingual: false
 10주전 새로운 토이프로젝트가 뭐가 있을까 고민하다가 1주일에 한번은 먹어야 하는 떡볶이를 아이템으로 한 `떡볶이맵`을 만들어 보기로 결심했다.
 
 <div>
-<img src="https://user-images.githubusercontent.com/34048253/126061816-16961267-3c95-4978-883c-8621ba16c29e.png" height=500 />
+<img src="https://user-images.githubusercontent.com/34048253/126061816-16961267-3c95-4978-883c-8621ba16c29e.png" width=30% />
 </div>
 
 도메인을 먼저 정하는게 중요했는데, 떡볶이의 영어발음인 tteokbokki는 너무 길고, 한국인이 저 철자를 다 외우는 사람이 많지는 않다고 생각되어 ttbkk.com라는 간단한 도메인을 구입했다. (12달러로 .com치고는 매우 저렴했다)
 
 <div style='display: flex,flex: wrap'>
-<img src="https://user-images.githubusercontent.com/34048253/126061820-33aeb796-379f-4273-ae05-31e890a14a4a.png" height=500 />
-<img src="https://user-images.githubusercontent.com/34048253/126061823-c16daeb8-b772-469d-8bdd-fb663113418e.png" height=500 />
+<img src="https://user-images.githubusercontent.com/34048253/126061820-33aeb796-379f-4273-ae05-31e890a14a4a.png" width=30% />
+<img src="https://user-images.githubusercontent.com/34048253/126061823-c16daeb8-b772-469d-8bdd-fb663113418e.png" width=30% />
 </div>
 
 [iitc](https://iitc.app/)라는 지도 관련 오픈소스를 알고 있었기 때문에, 여기에서 쓰이는 코드를 활용하고자 [leaflet](https://leafletjs.com/)이라는 map 라이브러리를 사용해보기로 했고, 기존에 익숙하게 사용하던 react와 요즘 대세?인 recoil을 도입해보기로 했다.
@@ -34,15 +34,15 @@ typescript는 지도 라이브러리를 사용하기에 매우 불편했다... �
 ![image](https://user-images.githubusercontent.com/34048253/126062310-5a97bc2e-4f1f-4b33-9c3a-f82f0c819d4d.png)
 
 <div style='display: flex,flex: wrap'>
-<img src="https://user-images.githubusercontent.com/34048253/126061824-b2a03aba-3a24-4e0a-983a-c833554dc67e.png" height=400 />
-<img src="https://user-images.githubusercontent.com/34048253/126062647-f1cf1cc5-7859-44a5-bbe3-a0bfa1d8e395.png" height=500 />
+<img src="https://user-images.githubusercontent.com/34048253/126061824-b2a03aba-3a24-4e0a-983a-c833554dc67e.png" width=30% />
+<img src="https://user-images.githubusercontent.com/34048253/126062647-f1cf1cc5-7859-44a5-bbe3-a0bfa1d8e395.png" width=30% />
 </div>
 
 leaflet 라이브러리를 카카오 맵 api로 교체하였고, maptile도 카카오맵으로 변경했다.
 leaflet도 scale bar 등의 여러 편의기능이 있었지만, 카카오맵도 썩 괜찮았다.
 네이버맵은 카카오맵에 비해 api doc이 부실해보였고, 동료 프론트 개발자분이 카카오맵을 프로덕트에 적용해두었기 때문에 나도 카카오맵을 쓰는게 유리해보였다.
 
-<img src="https://user-images.githubusercontent.com/34048253/126062711-2664af9c-8864-41c0-af9e-58baa9872b52.png" height=500 />
+<img src="https://user-images.githubusercontent.com/34048253/126062711-2664af9c-8864-41c0-af9e-58baa9872b52.png" width=30% />
 
 위에서 언급했던 iitc를 쓰면서 편리하다고 느꼈던 점은, 지도에서 다른 페이지로 넘어가지 않고, 모달이나 사이드바 등을 활용하여 여러가지 기능을 제공하는 점이었다. 장소생성 등 dashboard에서 제공해야 한다고 생각했던 모든 것들을 지도 내에서 개발해보기로 했고, admin dashboard는 정말 최소한의 기능만 포함시키기로 컨셉을 잡았다.
 
