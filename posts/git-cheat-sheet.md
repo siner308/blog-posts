@@ -13,17 +13,23 @@ multilingual: false
 ## remove untracked files
 
 ```bash
-$git clean -f         # files only
-$git clean -fd        # include directories
+$ git clean -f         # files only
+$ git clean -fd        # include directories
 ```
 
 ## ignore already committed files 
 ```bash
-$git rm -r --cached . # remove cache
-$git add .            # add without ignored files
+$ git rm -r --cached . # remove cache
+$ git add .            # add without ignored files
 ```
 
 ## remove cached credential
 ```bash
-$git config --global --unset credential.helper
+$ git config --global --unset credential.helper
+```
+## remove fetched branches
+This will prune any branches that no longer exist on the remote.
+
+```bash
+$ git branch -p
 ```
