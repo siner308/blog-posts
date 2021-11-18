@@ -31,5 +31,5 @@ $ git config --global --unset credential.helper
 This will prune any branches that no longer exist on the remote.
 
 ```bash
-$ git branch -p
+$ git remote origin --prune
 ```
