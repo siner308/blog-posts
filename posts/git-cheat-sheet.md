@@ -27,9 +27,13 @@ $ git add .            # add without ignored files
 ```bash
 $ git config --global --unset credential.helper
 ```
-## remove fetched branches
+## remove all fetched branches
 This will prune any branches that no longer exist on the remote.
 
 ```bash
 $ git fetch origin --prune
 ```
+
+## remove all local branches
+```bash
+$ git branch -d $(git branch -a)
