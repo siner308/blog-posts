@@ -9,6 +9,7 @@ tags:
     - javascript
     - typescript
     - ttbkk
+    - map
 date:   2021-07-18
 multilingual: false
 ---
