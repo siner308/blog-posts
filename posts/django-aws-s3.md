@@ -10,9 +10,7 @@ tags:
     - python
     - django
     - aws
-    - s3
     - storage
-    - cloud
 date:   2019-07-17
 multilingual: false
 ---
