@@ -8,7 +8,6 @@ catalog: true
 header-mask:  0.3
 tags:
     - http
-    - architecture
 date:   2020-01-27
 multilingual: false
 ---
