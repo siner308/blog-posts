@@ -9,7 +9,7 @@ header-mask:  0.3
 tags:
     - python
     - crawling
-    - algorithm
+    - map
 date:   2019-01-27
 multilingual: flase
 ---
