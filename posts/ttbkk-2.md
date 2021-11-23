@@ -11,6 +11,7 @@ tags:
     - ttbkk
     - serverless
     - map
+    - aws
 date:   2021-09-26
 multilingual: flase
 ---
