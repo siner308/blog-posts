@@ -6,7 +6,7 @@ author: "Siner"
 header-mask:  0.3
 tags:
     - database
-    - cheet sheet
+    - cheat sheet
 date:   2021-08-02
 multilingual: false
 ---

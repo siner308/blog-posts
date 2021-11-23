@@ -5,7 +5,7 @@ subtitle: "잘 사용하지 않아서 까먹지만 필요하면 써야하는"
 author: "Siner"
 header-mask:  0.3
 tags:
-    - cheet sheet
+    - cheat sheet
     - terraform
     - iac
 date:   2021-08-14
