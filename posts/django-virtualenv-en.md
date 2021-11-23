@@ -7,10 +7,7 @@ header-img: "img/django/django-virtualenv.jpg"
 catalog: true
 header-mask:  0.3
 tags:
-    - django
-    - virtual environment
     - python
-    - english
 date:   2019-01-12
 multilingual: false
 ---
