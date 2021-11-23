@@ -7,9 +7,8 @@ catalog: true
 header-mask:  0.3
 tags:
     - crawling
-    - typescript
+    - typescript/javascript
     - container
-    - batch
     - aws
 date:   2021-04-18
 multilingual: false

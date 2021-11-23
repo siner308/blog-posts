@@ -8,7 +8,7 @@ catalog: true
 header-mask:  0.3
 tags:
     - node
-    - javascript
+    - typescript/javascript
 date:   2020-01-03
 multilingual: false
 ---

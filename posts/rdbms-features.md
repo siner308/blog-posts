@@ -6,7 +6,6 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - rdbms
     - database
 date:   2021-10-10
 multilingual: flase

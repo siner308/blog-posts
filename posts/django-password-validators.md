@@ -7,6 +7,7 @@ catalog: true
 header-mask:  0.3
 tags:
     - python
+    - django
     - validation
 date:   2021-08-16
 multilingual: false

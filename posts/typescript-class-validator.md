@@ -7,8 +7,7 @@ header-img: "img/post_headers/2019-12-17-typescript-class-validator.png"
 catalog: true
 header-mask:  0.3
 tags:
-    - typescript
-    - express
+    - typescript/javascript
     - validation
 date:   2019-12-17
 multilingual: false

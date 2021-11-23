@@ -6,8 +6,7 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - javascript
-    - typescript
+    - typescript/javascript
     - ttbkk
     - map
 date:   2021-07-18

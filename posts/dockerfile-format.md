@@ -8,7 +8,6 @@ catalog: true
 header-mask:  0.3
 tags:
     - docker
-    - architecture
 date:   2020-03-29
 multilingual: false
 ---

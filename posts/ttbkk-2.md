@@ -7,7 +7,6 @@ catalog: true
 header-mask:  0.3
 tags:
     - golang
-    - slack
     - monitoring
     - ttbkk
     - serverless

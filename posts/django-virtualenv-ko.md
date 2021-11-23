@@ -8,6 +8,7 @@ catalog: true
 header-mask:  0.3
 tags:
     - python
+    - django
 date:   2019-01-12
 multilingual: false
 ---

@@ -6,6 +6,7 @@ author: "Siner"
 header-mask:  0.3
 tags:
     - git
+    - cheat sheet
 date:   2021-08-02
 multilingual: false
 ---

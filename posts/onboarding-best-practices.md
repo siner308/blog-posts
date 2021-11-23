@@ -6,8 +6,7 @@ author: "Siner"
 catalog: true
 header-mask:  0.3
 tags:
-    - onboarding
-    - hr
+    - etc
 date:   2021-07-24
 multilingual: false
 ---
