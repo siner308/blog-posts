@@ -37,4 +37,4 @@ $ git fetch origin --prune
 
 ## remove all local branches
 ```bash
-$ git branch -d $(git branch -a)
+$ git branch -d $(git branch)
