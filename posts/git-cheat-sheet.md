@@ -38,3 +38,9 @@ $ git fetch origin --prune
 ## remove all local branches
 ```bash
 $ git branch -d $(git branch)
+```
+
+## remove all git stashes
+```bash
+$ git stash clear
+```
