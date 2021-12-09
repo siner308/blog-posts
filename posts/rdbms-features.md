@@ -124,7 +124,7 @@ Orchestration-based SAGA는 트랜잭션을 Orchestrator 집중해서 관리 할
         
 OLTP가 데이터 자체의 처리에 중점이 된 용어라면, OLAP는 이미 저장된 데이터를 기반하여 분석하는데 중점이 된 용어이다.
         
-OLAP는 Data Warehouse에 저장되어있는 데이터를 부넛ㄱ하고, 이를 통해 사용자에겡 유의미한 정보를 제공해주는 처리방법을 의미함. 이런 정보(information: data를 분석한 것)를 바탕으로 보다 복잡한 모델링을 가능하게 한다. (Data를 요구와 목적에 맞게 분석하여 Information을 제공하는 것을 OLAP라고 함)
+OLAP는 Data Warehouse에 저장되어있는 데이터를 분석하고, 이를 통해 사용자에겡 유의미한 정보를 제공해주는 처리방법을 의미함. 이런 정보(information: data를 분석한 것)를 바탕으로 보다 복잡한 모델링을 가능하게 한다. (Data를 요구와 목적에 맞게 분석하여 Information을 제공하는 것을 OLAP라고 함)
         
 ![image](https://user-images.githubusercontent.com/34048253/136664336-1f8812df-9e1f-4fb6-9632-f6d04e56f7fa.png)
 
