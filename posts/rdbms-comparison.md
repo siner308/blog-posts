@@ -11,7 +11,7 @@ date:   2021-10-11
 multilingual: flase
 ---
 
-# 이전 게시물인 [RDBMS의 특징](https://blog.siner.io/2021/10/10/rdbms-features)를 보고 오면 좋습니다.
+# 이전 게시물인 [RDBMS의 특징](https://blog.siner.io/2021/10/10/rdbms-features)을 보고 오면 좋습니다.
 
 >RDBMS DB 엔진 중 유명한 것들을 비교해보고, 특징을 알아보자.
 >이 게시글을 보는 모두가 데이터베이스를 고르는 과정에 도움이 되었으면 한다. 
