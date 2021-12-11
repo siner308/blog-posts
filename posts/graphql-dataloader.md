@@ -112,6 +112,7 @@ Dataloader는 batching과 caching을 통해 백엔드 부하를 줄여줍니다.
 
 ```typescript
 // user.loader.ts
+@Injectable({ scope: Scope.REQUEST })
 export class UserLoader {
   getByUserId = new Dataloader<number, User>(
     async (userIds: number[]) => {
@@ -126,6 +127,7 @@ export class UserLoader {
 
 ```typescript
 // order-item.loader.ts
+@Injectable({ scope: Scope.REQUEST })
 export class OrderItemLoader {
   findByOrderId = new Dataloader<number, OrderItem[]>(
     async (orderIds: number[]) => {
