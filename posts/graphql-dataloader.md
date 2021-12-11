@@ -113,7 +113,7 @@ Dataloader는 batching과 caching을 통해 백엔드 부하를 줄여줍니다.
 ```typescript
 // user.loader.ts
 export class UserLoader {
-  getByUserId: Dataloader<number, User>  = new Dataloader<number, User>(
+  getByUserId = new Dataloader<number, User>(
     async (userIds: number[]) => {
       const users: User[] = await this.userRepo.findByIds(userIds);
       return userIds.map((userId) => users.find((user) => user.id === userId));
@@ -127,7 +127,7 @@ export class UserLoader {
 ```typescript
 // order-item.loader.ts
 export class OrderItemLoader {
-  findByOrderId: Dataloader<number, OrderItem[]> = new Dataloader<number, OrderItem[]>(
+  findByOrderId = new Dataloader<number, OrderItem[]>(
     async (orderIds: number[]) => {
       const orderItems: OrderItem[] = await this.orderItemRepo.findByOrderIds(orderIds);
       const orderItemGroup: { [key: number]: OrderItem[] } = {};
