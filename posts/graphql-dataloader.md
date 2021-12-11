@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GraphQL Dataloader 적용해보기"
+title:  "NestJS Dataloader 적용해보기"
 subtitle: "GraphQL에서 발생하는 N+1 문제 해결방법"
 author: "Siner"
 catalog: true
