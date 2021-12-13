@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "[번역] 새로 입사하는 개발자분들을 위한 최고의 온보딩 가이드"
+title: "[번역] 새로 입사하는 개발자분들을 위한 최고의 온보딩 가이드"
 subtitle: "온보딩 Best Practices와 첫 90일을 어떻게 계획할 것인지에 대하여."
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - etc
-date:   2021-07-24
-multilingual: false
+date: 2021-07-24
 ---
 [The Ultimate Guide to Onboarding New Developers: Industry Best Practices](https://codesubmit.io/blog/guide-to-onboarding-developers/)
 

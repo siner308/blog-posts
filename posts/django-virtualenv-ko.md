@@ -1,16 +1,10 @@
 ---
-layout: post
-title:  "가상환경(Virtualenv)로 장고(Django) 시작하기"
+title: "가상환경(Virtualenv)로 장고(Django) 시작하기"
 subtitle: ""
-author: "Siner"
-header-img: "img/django/django-virtualenv.jpg"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - django
-date:   2019-01-12
-multilingual: false
+date: 2019-01-12
 ---
 
 본 게시물의 내용은 **Ubuntu 16.04** 를 기반으로 작성되었습니다.

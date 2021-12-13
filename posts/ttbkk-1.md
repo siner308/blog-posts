@@ -1,16 +1,11 @@
 ---
-layout: post
-title:  "떡볶이맵 제작기 #1"
+title: "떡볶이맵 제작기 #1"
 subtitle: "문득 떡볶이가 먹고싶을때, 이곳을 방문하라"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - typescript/javascript
     - ttbkk
     - map
-date:   2021-07-18
-multilingual: false
+date: 2021-07-18
 ---
 
 10주전 새로운 토이프로젝트가 뭐가 있을까 고민하다가 1주일에 한번은 먹어야 하는 떡볶이를 아이템으로 한 `떡볶이맵`을 만들어 보기로 결심했다.

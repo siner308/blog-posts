@@ -1,16 +1,10 @@
 ---
-layout: post
-title:  "Express.js란 무엇인가 (Javascript 백엔드 프레임워크)"
+title: "Express.js란 무엇인가 (Javascript 백엔드 프레임워크)"
 subtitle: "Node.js를 위한 빠르고 개방적인 간결한 웹 프레임워크"
-author: "Siner"
-header-img: "img/post_headers/2020-01-03-express-introduction.png"
-catalog: true
-header-mask:  0.3
 tags:
     - node
     - typescript/javascript
-date:   2020-01-03
-multilingual: false
+date: 2020-01-03
 ---
 
 참고자료

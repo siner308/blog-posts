@@ -1,14 +1,10 @@
 ---
-layout: post
-title:  "깃 명령어 정리 - Git cheat sheet"
+title: "깃 명령어 정리 - Git cheat sheet"
 subtitle: "잘 사용하지 않아서 까먹지만 필요하면 써야하는"
-author: "Siner"
-header-mask:  0.3
 tags:
     - git
     - cheat sheet
-date:   2021-08-02
-multilingual: false
+date: 2021-08-02
 ---
 
 ## remove untracked files

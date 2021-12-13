@@ -1,16 +1,11 @@
 ---
-layout: post
-title:  "장고의 패스워드 유효성 검사 코드분석"
+title: "장고의 패스워드 유효성 검사 코드분석"
 subtitle: "Django Password Validator"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - django
     - validation
-date:   2021-08-16
-multilingual: false
+date: 2021-08-16
 ---
 
 django의 [startproject](https://docs.djangoproject.com/en/3.2/ref/django-admin/#django-admin-startproject)로 기본적으로 생성되는 `AUTH_PASSWORD_VALIDATORS`에 대해 분석해보려 합니다

@@ -1,17 +1,11 @@
 ---
-layout: post
-title:  "나만의 도커(Docker) 이미지를 만들어서 장고(Django) 서비스 배포하기"
+title: "나만의 도커(Docker) 이미지를 만들어서 장고(Django) 서비스 배포하기"
 subtitle: ""
-author: "Siner"
-header-img: "img/post_headers/2019-02-25-django-docker-custom-image.jpg"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - django
     - docker
-date:   2019-02-25
-multilingual: false
+date: 2019-02-25
 ---
 
 저번 장에서는 `Django 공식 도커 이미지`를 확인해보았고, `Deprecated`되었음을 확인했습니다.<br>

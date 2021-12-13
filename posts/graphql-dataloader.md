@@ -1,16 +1,11 @@
 ---
-layout: post
-title:  "Graphql Dataloader 적용해보기"
+title: "Graphql Dataloader 적용해보기"
 subtitle: "GraphQL에서 발생하는 N+1 문제 해결방법"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - graphql
     - nestjs
     - typescript
-date:   2021-12-11
-multilingual: flase
+date: 2021-12-11
 ---
 
 - 이 포스팅의 예제 코드는 typescript + nestjs를 기반으로 작성되었지만, 다른 언어에도 마찬가지로 적용이 가능합니다.

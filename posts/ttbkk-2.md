@@ -1,10 +1,6 @@
 ---
-layout: post
-title:  "떡볶이맵 제작기 #2 - 에러 모니터링"
+title: "떡볶이맵 제작기 #2 - 에러 모니터링"
 subtitle: "홈서버가 죽었을때 슬랙으로 모니터링하기"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - golang
     - monitoring
@@ -12,8 +8,7 @@ tags:
     - serverless
     - map
     - aws
-date:   2021-09-26
-multilingual: flase
+date: 2021-09-26
 ---
 
 # 문제점

@@ -1,17 +1,11 @@
 ---
-layout: post
-title:  "셀레니움(Selenium)과 파이썬(Python)으로 지도 크롤링 해보기"
+title: "셀레니움(Selenium)과 파이썬(Python)으로 지도 크롤링 해보기"
 subtitle: ""
-author: "Siner"
-header-img: "img/post_headers/2019-01-27-crawling-map-tiles.png"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - crawling
     - map
-date:   2019-01-27
-multilingual: flase
+date: 2019-01-27
 ---
 
 ## 0) 계기

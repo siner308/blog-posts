@@ -1,16 +1,10 @@
 ---
-layout: post
-title:  "Start Django with Virtualenv"
+title: "Start Django with Virtualenv"
 subtitle: ""
-author: "Siner"
-header-img: "img/django/django-virtualenv.jpg"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - django
-date:   2019-01-12
-multilingual: false
+date: 2019-01-12
 ---
 
 This post is based on **Ubuntu 16.04**.

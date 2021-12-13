@@ -1,15 +1,9 @@
 ---
-layout: post
-title:  "[번역] 그림으로 보는 SOLID 원칙"
+title: "[번역] 그림으로 보는 SOLID 원칙"
 subtitle: "객체지향 프로그래밍 5대 원칙"
-author: "Siner"
-header-img: "img/post_headers/2020-06-18-solid-principles.png"
-catalog: true
-header-mask:  0.3
 tags:
     - oop
-date:   2020-06-18
-multilingual: false
+date: 2020-06-18
 ---
 
 >**SOLID 원칙과 관련된 좋은 그림예시가 있어서 이를 번역하면서 예제코드를 추가하였습니다.**

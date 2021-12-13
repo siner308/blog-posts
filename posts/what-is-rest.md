@@ -1,15 +1,9 @@
 ---
-layout: post
-title:  "REST에 대하여"
+title: "REST에 대하여"
 subtitle: "REST API는 대체 무엇이고, Restful 하다는 건 대체 무엇인가"
-author: "Siner"
-header-img: "img/post_headers/2020-01-27-what-is-rest.png"
-catalog: true
-header-mask:  0.3
 tags:
     - http
-date:   2020-01-27
-multilingual: false
+date: 2020-01-27
 ---
 
 참고자료

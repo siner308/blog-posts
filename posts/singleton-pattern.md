@@ -1,15 +1,9 @@
 ---
-layout: post
-title:  "싱글톤 패턴 (Singleton Pattern)"
+title: "싱글톤 패턴 (Singleton Pattern)"
 subtitle: "반복되는 인스턴스 낭비를 줄이자"
-author: "Siner"
-header-img: "img/post_headers/2020-02-23-singleton-pattern.png"
-catalog: true
-header-mask:  0.3
 tags:
     - oop
-date:   2020-02-23
-multilingual: false
+date: 2020-02-23
 ---
 
 참고자료

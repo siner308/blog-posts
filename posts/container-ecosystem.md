@@ -1,16 +1,11 @@
 ---
-layout: post
-title:  "도커와 컨테이너 생태계의 변화과정"
+title: "도커와 컨테이너 생태계의 변화과정"
 subtitle: "의식의 흐름대로 알아보는 도커와 쿠버네티스의 세부구조"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - docker
     - kubernetes
     - container
-date:   2021-10-23
-multilingual: flase
+date: 2021-10-23
 ---
 
 # container 생태계의 변화

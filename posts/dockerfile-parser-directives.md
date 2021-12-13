@@ -1,15 +1,9 @@
 ---
-layout: post
-title:  "[번역] Dockerfile 레퍼런스 (4) - Parser Directives"
+title: "[번역] Dockerfile 레퍼런스 (4) - Parser Directives"
 subtitle: "FROM 명령어 이전에 사용할 수 있는 지시문"
-author: "Siner"
-header-img: "img/post_headers/dockerfile-commands.png"
-catalog: true
-header-mask:  0.3
 tags:
     - docker
-date:   2020-03-29
-multilingual: false
+date: 2020-03-29
 ---
 
 [공식 레퍼런스](https://docs.docker.com/engine/reference/builder/)를 토대로 작성되었습니다.

@@ -1,18 +1,12 @@
 ---
-layout: post
-title:  "장고(Django)에서 S3 연동하기"
+title: "장고(Django)에서 S3 연동하기"
 subtitle: "Amazon Web Service S3"
-author: "Siner"
-header-img: "img/post_headers/2019-07-17-django-aws-s3.png"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - django
     - aws
     - storage
-date:   2019-07-17
-multilingual: false
+date: 2019-07-17
 ---
 
 출처 : [django 에서 S3에 Static, media 파일 저장하고 사용하기](https://blog.leop0ld.org/posts/django-use-s3/)

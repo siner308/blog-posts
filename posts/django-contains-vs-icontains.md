@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "django contains vs icontains"
+title: "django contains vs icontains"
 subtitle: "TIL django query"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - django
-date:   2021-10-30
-multilingual: flase
+date: 2021-10-30
 ---
 
 

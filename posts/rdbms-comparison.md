@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "주요 RDBMS의 종류"
+title: "주요 RDBMS의 종류"
 subtitle: "mysql vs mariadb vs postgresql vs sqlite vs oracle vs mssql"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - database
-date:   2021-10-11
-multilingual: flase
+date: 2021-10-11
 ---
 
 # 이전 게시물인 [RDBMS의 특징](https://blog.siner.io/2021/10/10/rdbms-features)을 보고 오면 좋습니다.

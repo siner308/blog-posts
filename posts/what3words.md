@@ -1,16 +1,10 @@
 ---
-layout: post
-title:  "파이썬(Python3)으로 왓쓰리워즈(what3words, W3W)를 이용해보자."
+title: "파이썬(Python3)으로 왓쓰리워즈(what3words, W3W)를 이용해보자."
 subtitle: "세상의 모든 주소를 세 단어에 담다"
-author: "Siner"
-header-img: "img/post_headers/2019-05-20-what3words.png"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - map
-date:   2019-05-20
-multilingual: false
+date: 2019-05-20
 ---
 
 ## what3words란?

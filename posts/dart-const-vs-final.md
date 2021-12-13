@@ -1,12 +1,9 @@
 ---
-layout: post
-title:  "[Dart Programming] final과 const의 차이점"
+title: "[Dart Programming] final과 const의 차이점"
 subtitle: "상수를 표현하는 두가지 방법"
-author: "Siner"
 tags:
     - dart
-date:   2020-12-08
-multilingual: false
+date: 2020-12-08
 ---
 
 final과 const는 모두 상수(constant)를 선언할 때 사용되는 키워드입니다.

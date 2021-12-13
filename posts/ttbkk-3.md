@@ -1,17 +1,12 @@
 ---
-layout: post
-title:  "떡볶이맵 제작기 #3 - 지도 API Pagination 적용기"
+title: "떡볶이맵 제작기 #3 - 지도 API Pagination 적용기"
 subtitle: "4000개의 지도 데이터를 느려보이지 않게 불러와서 로딩하기"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - ttbkk
     - ux
     - map
     - http
-date:   2021-10-24
-multilingual: flase
+date: 2021-10-24
 ---
 
 떡볶이맵의 데이터가 점점 많아지면서 marker cluster용 api를 구축해야 했지만, 어떠한 라이브러리가 좋은지 파악하지 못했고 (내가 직접 구현할 수도 있고) best practice를 공부하지 못했기 떄문에 해당 작업을 잠시 뒤로 미루게 되었다.

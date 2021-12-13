@@ -1,15 +1,9 @@
 ---
-layout: post
-title:  "[번역] Dockerfile 레퍼런스 (2) - Buildkit"
+title: "[번역] Dockerfile 레퍼런스 (2) - Buildkit"
 subtitle: "동시성을 가지며, 캐시 효율적이며 Dockerfile에 독립적인 빌더 툴킷"
-author: "Siner"
-header-img: "img/post_headers/dockerfile-commands.png"
-catalog: true
-header-mask:  0.3
 tags:
     - docker
-date:   2020-03-29
-multilingual: false
+date: 2020-03-29
 ---
 
 [공식 레퍼런스](https://docs.docker.com/engine/reference/builder/)를 토대로 작성되었습니다.

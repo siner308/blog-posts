@@ -1,17 +1,12 @@
 ---
-layout: post
-title:  "프로덕션 레벨의 크롤러 개발 회고"
+title: "프로덕션 레벨의 크롤러 개발 회고"
 subtitle: "python은 과연 크롤링하기 좋은 언어인가"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - crawling
     - typescript/javascript
     - container
     - aws
-date:   2021-04-18
-multilingual: false
+date: 2021-04-18
 ---
 
 지난 25일동안 지인의 부탁으로 특정 게시판의 게시글들을 전부 크롤링하는 외주를 진행했었다.

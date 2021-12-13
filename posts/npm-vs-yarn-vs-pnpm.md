@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "npm vs yarn vs pnpm vs yarn2"
+title: "npm vs yarn vs pnpm vs yarn2"
 subtitle: "pnpm은 정말로 탄소절감과 ssd수명에 도움을 줄까?"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - typescript/javascript
-date:   2020-12-19
-multilingual: false
+date: 2020-12-19
 ---
 
 # 서론

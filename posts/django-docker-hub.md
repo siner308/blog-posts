@@ -1,17 +1,11 @@
 ---
-layout: post
-title:  "장고(Django) 공식 이미지로 설명하는 도커(Docker)의 기본적인 사용법"
+title: "장고(Django) 공식 이미지로 설명하는 도커(Docker)의 기본적인 사용법"
 subtitle: ""
-author: "Siner"
-header-img: "img/post_headers/2019-02-16-django-docker-hub.png"
-catalog: true
-header-mask:  0.3
 tags:
     - python
     - django
     - docker
-date:   2019-02-16
-multilingual: false
+date: 2019-02-16
 ---
 
 이번 장에서는 `Django 공식 이미지`를 사용하여 `Docker의 기본 개념`에 대해 설명하겠습니다.<br>

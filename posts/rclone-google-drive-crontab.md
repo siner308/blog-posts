@@ -1,15 +1,10 @@
 ---
-layout: post
-title:  "리눅스에 구글드라이브 연동하여 백업스토리지로 활용하기"
+title: "리눅스에 구글드라이브 연동하여 백업스토리지로 활용하기"
 subtitle: "rclone과 crontab을 활용한 데이터베이스 백업 프로세스"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - storage
     - ttbkk
-date:   2021-09-10
-multilingual: flase
+date: 2021-09-10
 ---
 
 작년에 지인이 rclone, google drive, cloudbox를 활용하여 구글드라이브에 올린 영상을 plex라는 어플로 감상할 수 있도록 구축한 경험을 들은 적이 있었다. (구글드라이브 저장소를 친구들과 공유하고, plex계정도 친구초대가 가능해서 이부분에서 시너지가 폭발하는 듯 했다)

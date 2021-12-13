@@ -1,15 +1,11 @@
 ---
-layout: post
-title:  "테라폼 명령어 정리 - Terraform cheat sheet"
+title: "테라폼 명령어 정리 - Terraform cheat sheet"
 subtitle: "잘 사용하지 않아서 까먹지만 필요하면 써야하는"
-author: "Siner"
-header-mask:  0.3
 tags:
     - cheat sheet
     - terraform
     - iac
-date:   2021-08-14
-multilingual: false
+date: 2021-08-14
 ---
 
 ## force unlock backend

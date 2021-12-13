@@ -1,15 +1,9 @@
 ---
-layout: post
-title:  "[번역] Dockerfile 레퍼런스 (1) - Usage"
+title: "[번역] Dockerfile 레퍼런스 (1) - Usage"
 subtitle: "도커 데몬의 작동방법, 이미지 빌드 & 태깅, 캐시이미지 가져오기"
-author: "Siner"
-header-img: "img/post_headers/dockerfile-commands.png"
-catalog: true
-header-mask:  0.3
 tags:
     - docker
-date:   2020-03-29
-multilingual: false
+date: 2020-03-29
 ---
 
 [공식 레퍼런스](https://docs.docker.com/engine/reference/builder/)를 토대로 작성되었습니다.

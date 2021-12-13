@@ -1,14 +1,9 @@
 ---
-layout: post
-title:  "RDMBS의 특징"
+title: "RDMBS의 특징"
 subtitle: "데이터베이스 면접 질문은 아니고 용어 정리"
-author: "Siner"
-catalog: true
-header-mask:  0.3
 tags:
     - database
-date:   2021-10-10
-multilingual: flase
+date: 2021-10-10
 ---
 
 # 동시성 제어 - MVCC (Multi Version Concurrency Control)
