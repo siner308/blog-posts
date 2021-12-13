@@ -15,7 +15,7 @@ multilingual: flase
 
 패킷은 정보 기술에서 패킷 방식의 컴퓨터 네트워크가 전달하는 데이터의 형식화된 블록이다. 패킷은 제어 정보와 사용자 데이터로 이루어지며, 이를 페이로드라고도 한다. 패킷을 지원하지 않는 컴퓨터 통신 연결은 단순히 바이트, 문자열, 비트를 독립적으로 연속하여 데이터를 전송한다. 데이터가 패킷으로 형식이 바뀔 때, 네트워크는 장문 메시지를 더 효과적이고 신뢰성 있게 보낼 수 있다.
 
-<img src="http://www.ktword.co.kr/img_data/1859_1.jpg" width=300 />
+<img src="https://user-images.githubusercontent.com/34048253/145793779-2da05d3e-8fe2-4803-b593-cd03b82453d4.jpeg" width=300 />
 
 - version (4 bits): 현재로는 버전 4를 사용
 - Header Length (4 bits): 헤더의 길이
