@@ -24,7 +24,7 @@ date: 2021-12-13
   - Bit 7: 항상 0
 - Total Packet Length (16 bits): IP 헤더 및 데이터를 포함한 IP 패킷 전체 길이를 바이트 단위로 길이를 표시. (최대값은 65,535 = 2^16 - 1)
 - Fragment Identifier (16 bits): 각 조각이 동일한 데이터그램에 속하면 같은 일련번호를 공유함
-  - Datagram: 패킷교환에서 각각 독립적으로 췩브되는 각각의 패킷
+  - Datagram: 패킷교환에서 각각 독립적으로 취급되는 각각의 패킷
 - Fragmentation Flag (3 bits) 분열의 특성을 나타내는 플래그
   - Bit 1: 미사용 (항상 0)
   - Bit 2: D F bit (Don't Fragment)
