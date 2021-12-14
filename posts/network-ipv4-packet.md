@@ -1,5 +1,5 @@
 ---
-title: "IPv4의 네트워크 패킷 주소와 각 필드의 역할"
+title: "IPv4의 네트워크 패킷 구조와 각 필드의 역할"
 subtitle: "TCP/IP를 정리하며"
 tags:
     - network
