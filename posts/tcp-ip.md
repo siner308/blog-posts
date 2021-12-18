@@ -6,8 +6,6 @@ tags:
 date:   2021-12-18
 ---
 
-> https://datatracker.ietf.org/doc/html/rfc793
-
 TCP/IP는 현재 인터넷 프로토콜 중 가장 많이 쓰이고있다.
 
 TCP/IP는 패킷 통신 방식의 인터넷 프로토콜인 IP(internet protocol)와 전송 조절 프로토콜인 TCP (transmission control protocol)
@@ -283,3 +281,11 @@ Case 3: both users close simultaneously
 
                       Simultaneous Close Sequence
 ```
+
+
+#### reference
+
+[rfc793](https://datatracker.ietf.org/doc/html/rfc793)
+[위키백과 - 전송 제어 프로토콜](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%86%A1_%EC%A0%9C%EC%96%B4_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+[위키백과 - 인터넷 프로토콜](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+[위키백과 - 인터넷 프로토콜 스위트](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C_%EC%8A%A4%EC%9C%84%ED%8A%B8)
