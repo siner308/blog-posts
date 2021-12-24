@@ -23,7 +23,7 @@ JIT 컴파일러는 JVM의 일부이다. JIT 컴파일러가 활성화되면, JV
 코틀린에서도 .kt 파일을 .class로 변환해주기만 하면 JVM에서는 동일하게 사용이 가능하다.  
 
 <img src="https://user-images.githubusercontent.com/34048253/147363062-b8395f1c-d4cf-46c6-8fbd-5295ded706f4.png" width=250 />
- 
+
 # references
 - [Java Basic Interview Questions](https://www.interviewbit.com/java-interview-questions/)
 - [JIT 컴파일](https://ko.wikipedia.org/wiki/JIT_%EC%BB%B4%ED%8C%8C%EC%9D%BC)
