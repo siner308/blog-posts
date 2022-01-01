@@ -93,7 +93,29 @@ Blackburn과 McKinley가 2003년에 고안한 이 방법은 deferred reference c
 작성 예정
 
 ## 구현 방법
+레퍼런스 카운트를 증가시키는 방법은 다양하다, 이중 효율이 좋은 레퍼런스 카운팅 방법 두가지는 동작 방식이 근본적으로 다르다.
+아래의 두가지 방법의 장단점을 살펴보자.
+
 ### 2-1. Weighted reference counting
+Weighted reference counting은 1987년 Bevan과 Watson & Watson에 의해 고안된 방식입니다.
+Weighted reference counting에서 각 레퍼런스는 weight를 가지고있고, 
+각 객체는 레퍼런스 카운트를 가지고 있는 대신 레퍼런스를 추적하기 때문에 추적하고 있는 모든 레퍼런스의 weight인 total weight을 갖게 된다.
+새로 생긴 객체를 참조할때는 2^16과 같은 큰 weight를 가지게 된다. reference가 복사될때, weight의 절반이 새로운 레퍼런스로 이동하게 된다. 그리고 나머지 절반의 weight은 기존 레퍼런스에 남아있게 된다.
+total weight은 변하지 않기 때문에, 해당 객체의 reference count는 업데이트할 필요가 없다.
+
+Reference를 제거할때는 total weight에 제거할 레퍼런스가 가지는 weight만큼을 빼준다. total weight가 0이 되면, 모든 레퍼런스가 삭제된 것이다.
+만약 weight가 1인 객체를 복사하려 하면, 해당 레퍼런스는 total weight을 증가시켜야 하고, 증가된 만큼을 새로운 레퍼런스의 weight로 한다.
+
+위의 방법을 다른식으로도 구현할 수 있는데, 간접 참조 객체를 생성하는 것이다. 이때 간첩 참조로 생성된 최초의 레퍼런스는 기존 weight의 split 대신 large weight(ex. 2^16)을 가지게 된다.
+
+레퍼런스가 복사될때 레퍼런스 카운트에 접근할 필요가 없는 이러한 속성은 레퍼런스 카운트에 접근하는 비용이 큰 객체의 경우에 특히 유리합니다.
+레퍼런스 카운트 비용이 큰 예시는 disk나 network가 있습니다.
+
+이러한 방식은 많은 스레드가 레퍼런스 카운트를 증가시키기 위해 참조를 locking 하는 것을 피할 수 있게 해줍니다. 그렇기 때문에, weighted reference counting 방식은 병렬처리, 멀티프로세스, 데이터베이스, 분산처리 애플리케이션 등에 효율적입니다.
+
+Simple reference counting 방식의 주요한 문제는 참조를 해제하기 위해 레퍼런스 카운트에 접근해야 한다는 점이고, 많은 레퍼런스가 해제되는 상황에서 병목 현상이 발생하게 됩니다.
+Weighted reference counting 방식에서는 죽어가는 레퍼런스의 weight를 액티브 레퍼런스로 옮기는 식으로 이러한 문제를 회피합니다.
+
 ### 2-2. Indirect reference counting
 
 ## 장점
