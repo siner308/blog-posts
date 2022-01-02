@@ -97,7 +97,7 @@ Blackburn과 McKinley가 2003년에 고안한 이 방법은 deferred reference c
 아래의 두가지 방법의 장단점을 살펴보자.
 
 ### 2-1. Weighted reference counting
-Weighted reference counting은 1987년 Bevan과 Watson & Watson에 의해 고안된 방식입니다.
+Weighted reference counting은 1987년 Bevan과 Watson & Watson에 의해 고안된 방식이다.
 Weighted reference counting에서 각 레퍼런스는 weight를 가지고있고, 
 각 객체는 레퍼런스 카운트를 가지고 있는 대신 레퍼런스를 추적하기 때문에 추적하고 있는 모든 레퍼런스의 weight인 total weight을 갖게 된다.
 새로 생긴 객체를 참조할때는 2^16과 같은 큰 weight를 가지게 된다. reference가 복사될때, weight의 절반이 새로운 레퍼런스로 이동하게 된다. 그리고 나머지 절반의 weight은 기존 레퍼런스에 남아있게 된다.
@@ -108,15 +108,39 @@ Reference를 제거할때는 total weight에 제거할 레퍼런스가 가지는
 
 위의 방법을 다른식으로도 구현할 수 있는데, 간접 참조 객체를 생성하는 것이다. 이때 간첩 참조로 생성된 최초의 레퍼런스는 기존 weight의 split 대신 large weight(ex. 2^16)을 가지게 된다.
 
-레퍼런스가 복사될때 레퍼런스 카운트에 접근할 필요가 없는 이러한 속성은 레퍼런스 카운트에 접근하는 비용이 큰 객체의 경우에 특히 유리합니다.
-레퍼런스 카운트 비용이 큰 예시는 disk나 network가 있습니다.
+레퍼런스가 복사될때 레퍼런스 카운트에 접근할 필요가 없는 이러한 속성은 레퍼런스 카운트에 접근하는 비용이 큰 객체의 경우에 특히 유리하다.
+레퍼런스 카운트 비용이 큰 예시는 disk나 network가 있다.
 
-이러한 방식은 많은 스레드가 레퍼런스 카운트를 증가시키기 위해 참조를 locking 하는 것을 피할 수 있게 해줍니다. 그렇기 때문에, weighted reference counting 방식은 병렬처리, 멀티프로세스, 데이터베이스, 분산처리 애플리케이션 등에 효율적입니다.
+이러한 방식은 많은 스레드가 레퍼런스 카운트를 증가시키기 위해 참조를 locking 하는 것을 피할 수 있게 해준다. 그렇기 때문에, weighted reference counting 방식은 병렬처리, 멀티프로세스, 데이터베이스, 분산처리 애플리케이션 등에 효율적이다.
 
-Simple reference counting 방식의 주요한 문제는 참조를 해제하기 위해 레퍼런스 카운트에 접근해야 한다는 점이고, 많은 레퍼런스가 해제되는 상황에서 병목 현상이 발생하게 됩니다.
-Weighted reference counting 방식에서는 죽어가는 레퍼런스의 weight를 액티브 레퍼런스로 옮기는 식으로 이러한 문제를 회피합니다.
+Simple reference counting 방식의 주요한 문제는 참조를 해제하기 위해 레퍼런스 카운트에 접근해야 한다는 점이고, 많은 레퍼런스가 해제되는 상황에서 병목 현상이 발생하게 된다.
+Weighted reference counting 방식에서는 죽어가는 레퍼런스의 weight를 액티브 레퍼런스로 옮기는 식으로 이러한 문제를 회피한다.
 
 ### 2-2. Indirect reference counting
+Indirect reference counting(IRC) 는 레퍼런스 카운팅을 사용하는 분산된 비순환 구조의 가비지컬렉션의 재정렬 문제를 해결하기 위해 고안되었다.
+실제로 레퍼런스 카운트는 프로세스 전체에 퍼져있다. 
+트리 구조는 현재 개체에 대한 레퍼런스를 보유하고 있는 모든 leaf node와 레퍼런스 카운트의 일부를 보유하고 있는 모든 내부 노드와 함께 이러한 카운트를 연결한다.
+count의 감소는 트리의 분기를 따라 전달되지만, 증가는 로컬에만 해당된다.
+따라서 기본 커뮤니케이션 레이어의 재정렬로 인해 레퍼런스 카운트의 증가/감소에 따른 race condition이 발생하지 않는다.
+
+IRC를 고안한 Piquer는 두개의 참조를 사용하여 remote reference를 구현했는데, 
+두 참조중 하나는(논문에서 primary라고 부른다.) 원하는 리모트 객체를 가리키고, 
+다른 하나는(여기서는 source pointer라고 부른다.) 얻어진 참조의 원본(source)을 가리킨다.
+remote reference가 복사될때 primary reference는 원본의 복사본의 참조와 동일하지만, 
+source pointer는 복사본이 생성되는 노드를 나타내고 해당 노드에 대한 로컬 레퍼런스 카운트가 증가한다.
+remote reference가 버려질때, dec 메시지가 source node로 전송된다.
+주어진 객체의 remote reference에 대한 source pointer는 해당 객체를 root로 한 diffusion tree를 형성한다.
+
+아래의 참조관계를 보면, B와 C는 A로부터 직접참조가 되지만, D는 A로부터 간접참조가 되어있다.
+
+![image](https://user-images.githubusercontent.com/34048253/147879591-8965f11e-0281-417c-9299-f625d69ee12c.png)
+
+위 참조관계를 Standard Reference Counting과 Indirect Reference Counting 방식으로 풀어보자.
+
+![image](https://user-images.githubusercontent.com/34048253/147879670-0e68e772-5382-4b48-8ca1-086b8ada0454.png)
+
+- 왼쪽 이미지는 일반적인 레퍼런스 카운팅이다. (Standard Naive reference counting)
+- 우측 이미지는 Indirect reference counting으로, 모든 remote reference는 연관된 복사 수가 있고, primary 포인터와 다른 source pointer가 있을 수 있다.
 
 ## 장점
 1. 객체가 접근 불가능해지는 즉시 메모리가 해제되므로, 프로그래머가 객체의 해제 시점을 어느정도 예측 가능하다.
@@ -135,3 +159,4 @@ Weighted reference counting 방식에서는 죽어가는 레퍼런스의 weight�
 # references
 - [Garbage collection (computer science)](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science))
 - [쓰레기 수집 (컴퓨터 과학)](https://ko.wikipedia.org/wiki/%EC%93%B0%EB%A0%88%EA%B8%B0_%EC%88%98%EC%A7%91_(%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B3%BC%ED%95%99))
+- [Diffusion Tree Restructuring for Indirect Reference Counting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.30.2813&rep=rep1&type=pdf)
