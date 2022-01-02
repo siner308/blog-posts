@@ -133,11 +133,11 @@ remote reference가 버려질때, dec 메시지가 source node로 전송된다.
 
 아래의 참조관계를 보면, B와 C는 A로부터 직접참조가 되지만, D는 A로부터 간접참조가 되어있다.
 
-![image](https://user-images.githubusercontent.com/34048253/147879591-8965f11e-0281-417c-9299-f625d69ee12c.png)
+<img src="https://user-images.githubusercontent.com/34048253/147879591-8965f11e-0281-417c-9299-f625d69ee12c.png" width=300 />
 
 위 참조관계를 Standard Reference Counting과 Indirect Reference Counting 방식으로 풀어보자.
 
-![image](https://user-images.githubusercontent.com/34048253/147879670-0e68e772-5382-4b48-8ca1-086b8ada0454.png)
+<img src="https://user-images.githubusercontent.com/34048253/147879670-0e68e772-5382-4b48-8ca1-086b8ada0454.png" width="600">
 
 - 왼쪽 이미지는 일반적인 레퍼런스 카운팅이다. (Standard Naive reference counting)
 - 우측 이미지는 Indirect reference counting으로, 모든 remote reference는 연관된 복사 수가 있고, primary 포인터와 다른 source pointer가 있을 수 있다.
