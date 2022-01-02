@@ -6,12 +6,13 @@ tags:
 date:   2021-12-26
 ---
 
+> **아직 작성되지 않은 부분이 많이 있습니다.**<br>
+> **빠르게 채워넣도록 하겠습니다.**
+
 가비지컬렉션 (garbage collection, GC)은 자동으로 메모리를 관리해주는 기법이다.
 프로세스에 의해 할당되었지만, 더이상 참조되지 않는 메모리를 garbage라고 하고, 이러한 garbage를 수거하는 작업은 garbage collector가 진행한다.
 
-java, python 등의 언어들은 이러한 GC를 염두에 두고 설계되어, 언어 자체에 해당 기능이 포함되어 있다.
-- [cpython/gcmodule.c](https://github.com/python/cpython/blob/main/Modules/gcmodule.c)
-
+java, python 등의 언어들은 이러한 GC를 염두에 두고 설계되어, 언어 자체에 해당 기능이 포함되어 있다.<br>
 C, C++ 등의 수동 메모리 관리를 가정하고 설계된 언어의 경우에도 GC를 지원하는 구현도 존재한다.
 
 # 1. Tracing
@@ -25,15 +26,13 @@ mark-and-sweep 알고리즘에서, 각각의 객체는 1비트의 flag를 하나
 
 mark 단계에서는 root set 전체를 순회하며 flag를 '사용중' 상태로 설정한다.
 sweep 단계에서는 메모리가 모두 스캔되었기에 '사용중' 상태가 아닌 메모리를 모두 free로 바꿀 수 있다.
-
-이 기법은 단점이 몇가지 있는데, 그중 하나는 GC를 진행하는 동안 전체 시스템을 freeze 시켜야 한다는 점이다. 
+이 기법은 몇가지 단점이 있는데, 그중 하나는 GC를 진행하는 동안 전체 시스템을 freeze 시켜야 한다는 점이다. 
 
 ![Animation_of_the_Naive_Mark_and_Sweep_Garbage_Collector_Algorithm](https://user-images.githubusercontent.com/34048253/147408809-ae9a3134-8b5b-4305-a30f-99fce81509bd.gif)
 
 ## 기본 알고리즘 1-2. Tri-color marking 
 
 mark-and-sweep의 퍼포먼스 문제로 인해, 현대의 tracing GC는 tri-color marking 의 추상적 모델을 기반으로 다양하게 발전하고 있다.
-
 tri-color marking은 아래와 같이 동작한다.
 
 1. 각각의 객체를 흰색, 회색, 검은색으로 분류한다.
@@ -50,11 +49,16 @@ tri-color marking은 아래와 같이 동작한다.
 ![Animation_of_tri-color_garbage_collection](https://user-images.githubusercontent.com/34048253/147408817-0bff71e7-4528-431d-a127-f04b95326181.gif)
 
 ## 다양한 구현 전략
-- Moving vs. non-moving
-- Copying vs. mark-and-sweep vs. mark-and-don't-sweep
-- Generational GC (ephemeral GC)
-- Stop-the-world vs. incremental vs. concurrent
-- Precise vs. conservative and internal pointers
+### Moving vs. non-moving
+작성 예정
+### Copying vs. mark-and-sweep vs. mark-and-don't-sweep
+작성 예정
+### Generational GC (ephemeral GC)
+작성 예정
+### Stop-the-world vs. incremental vs. concurrent
+작성 예정
+### Precise vs. conservative and internal pointers
+작성 예정
 
 # 2. Reference counting
 레퍼런스 카운팅 방식의 GC에서 각 객체는 참조당하는 횟수를 표시해둔다.
