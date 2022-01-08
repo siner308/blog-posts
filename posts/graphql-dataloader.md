@@ -159,12 +159,12 @@ class OrderResolver {
 
   @ResolveField(() => User)
   user(@Parent(): order: Order): Promise<User> {
-    return this.userLoader.getByUserId(order.userId);
+    return this.userLoader.getByUserId.load(order.userId);
   }
 
   @ResolveField(() => [OrderItem])
   orderItems(@Parent(): order: Order): Promise<OrderItem[]> {
-    return this.orderItemLoader.findByOrderId(order.id);
+    return this.orderItemLoader.findByOrderId.load(order.id);
   }
 }
 ```
