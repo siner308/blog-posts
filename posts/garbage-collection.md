@@ -66,6 +66,17 @@ tri-color marking은 아래와 같이 동작한다.
 참고가 생기면 count는 증가하고, 참조가 사라지면 감소한다.
 count가 0이 되었을때, 객체를 해제한다.
 
+## 장점
+1. 객체가 접근 불가능해지는 즉시 메모리가 해제되므로, 프로그래머가 객체의 해제 시점을 어느정도 예측 가능하다.
+2. 객체가 사용된 직후에 메모리를 해제하므로, 메모리 해제 시점에 해당 객체는 캐시에 저장되어 있을 확률이 높기 때문에 메모리 해제가 빠르게 이루어진다.
+
+## 단점
+1. **Cycles**: 두개 이상의 객체가 서로 참조를 하고있다면, 사이클(순환참조)이 생겨서 참조 횟수가 영원히 0이 될 수 없다. 이를 순환 참조라고 하며, 메모리 누수의 원인이 된다. CPython은 이 문제를 해결하기 위해 순환 참조를 감지하는 알고리즘을 사용한다.
+2. **Space overhead (reference count)**: 레퍼런스 카운팅 방식은 각 객체마다 카운트를 저장할 공간이 필요하다. 이것은 객체의 메모리 영역에서 가까운 곳에 저장될 것인데, 객체마다 32에서 64비트의 공간이 추가적으로 필요로 하게 된다. 일부 시스템에서는 태그가 지정된 포인터를 사용하여 개체 메모리의 사용되지 않는 영역에 참조 횟수를 저장하여 이러한 오버헤드를 완화할 수 있다.
+3. **Speed overhead (increment/decrement)**: 참조의 할당이 그 범위를 넘어서면 하나 이상의 reference counter를 수정해야 할 수도 있다. 그러나 참조가 외부 범위 변수에서 내부 범위 변수로 복사되어 내부 변수의 수명이 외부 변수의 수명으로 제한되는 일반적인 경우에는 참조 증가가 제거될 수 있다. 외부변수는 참조를 '소유'한다. C++에서는 const reference를 사용하여 이러한 내용을 쉽게 구현할 수 있다. C++에서 레퍼런스 카운팅은 일반적으로 생성자, 소멸자 및 할당 연산자가 참조를 관리하는 '스마트포인터' 를 사용하여 구현된다.
+4. **Requires atomicity**: 멀티스레드 환경에서, 이러한 수정(increment/decrement)은 [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap)과 같은 [atomic operation](https://en.wikipedia.org/wiki/Linearizability)이어야 한다. 멀티 프로세서 환경에서의 atomic operation은 비용이 많이 든다.
+5. **Not real-time**: 일반적으로 reference counting은 구현할 때 real-time 속성의 동작을 지원하지 않는다. 이는 재귀적인 메모리 해제가 필요한 object가 다른 object 또한 가리키고 있고 (=any pointer assignment), 이 object를 수행중인 스레드는 다른 task를 수행하고 있어 메모리 해제 수행이 불가능한 경우 실시간 처리가 보장되지 않기 때문이다. 이 이슈는 추가적인 연산 오버헤드를 감수하면서 참조되지 않은 object의 메모리 해제를 다른 스레드에 위임하여 회피할 수 있다.
+
 ## 비효율적인 reference count update를 다루는 방법
 참조가 생성되고 제거될때마다 reference count를 증가,감소 시킨다면 퍼모먼스가 크게 하락할 것이다.
 연산 시간 뿐만 아니라 캐시 퍼포먼스에도 영향을 주고 [pipeline bubble](https://en.wikipedia.org/wiki/Pipeline_stall)이 발생시키는 원인이 된다.
@@ -145,17 +156,6 @@ remote reference가 버려질때, dec 메시지가 source node로 전송된다.
 
 - 왼쪽 이미지는 일반적인 레퍼런스 카운팅이다. (Standard Naive reference counting)
 - 우측 이미지는 Indirect reference counting으로, 모든 remote reference는 연관된 복사 수가 있고, primary 포인터와 다른 source pointer가 있을 수 있다.
-
-## 장점
-1. 객체가 접근 불가능해지는 즉시 메모리가 해제되므로, 프로그래머가 객체의 해제 시점을 어느정도 예측 가능하다.
-2. 객체가 사용된 직후에 메모리를 해제하므로, 메모리 해제 시점에 해당 객체는 캐시에 저장되어 있을 확률이 높기 때문에 메모리 해제가 빠르게 이루어진다.
-
-## 단점
-1. **Cycles**: 두개 이상의 객체가 서로 참조를 하고있다면, 사이클(순환참조)이 생겨서 참조 횟수가 영원히 0이 될 수 없다. 이를 순환 참조라고 하며, 메모리 누수의 원인이 된다. CPython은 이 문제를 해결하기 위해 순환 참조를 감지하는 알고리즘을 사용한다. 
-2. **Space overhead (reference count)**: 레퍼런스 카운팅 방식은 각 객체마다 카운트를 저장할 공간이 필요하다. 이것은 객체의 메모리 영역에서 가까운 곳에 저장될 것인데, 객체마다 32에서 64비트의 공간이 추가적으로 필요로 하게 된다. 일부 시스템에서는 태그가 지정된 포인터를 사용하여 개체 메모리의 사용되지 않는 영역에 참조 횟수를 저장하여 이러한 오버헤드를 완화할 수 있다.
-3. **Speed overhead (increment/decrement)**: 참조의 할당이 그 범위를 넘어서면 하나 이상의 reference counter를 수정해야 할 수도 있다. 그러나 참조가 외부 범위 변수에서 내부 범위 변수로 복사되어 내부 변수의 수명이 외부 변수의 수명으로 제한되는 일반적인 경우에는 참조 증가가 제거될 수 있다. 외부변수는 참조를 '소유'한다. C++에서는 const reference를 사용하여 이러한 내용을 쉽게 구현할 수 있다. C++에서 레퍼런스 카운팅은 일반적으로 생성자, 소멸자 및 할당 연산자가 참조를 관리하는 '스마트포인터' 를 사용하여 구현된다.
-4. **Requires atomicity**: 멀티스레드 환경에서, 이러한 수정(increment/decrement)은 [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap)과 같은 [atomic operation](https://en.wikipedia.org/wiki/Linearizability)이어야 한다. 멀티 프로세서 환경에서의 atomic operation은 비용이 많이 든다.
-5. **Not real-time**: 일반적으로 reference counting은 구현할 때 real-time 속성의 동작을 지원하지 않는다. 이는 재귀적인 메모리 해제가 필요한 object가 다른 object 또한 가리키고 있고 (=any pointer assignment), 이 object를 수행중인 스레드는 다른 task를 수행하고 있어 메모리 해제 수행이 불가능한 경우 실시간 처리가 보장되지 않기 때문이다. 이 이슈는 추가적인 연산 오버헤드를 감수하면서 참조되지 않은 object의 메모리 해제를 다른 스레드에 위임하여 회피할 수 있다.
 
 # 3. Escape analysis
 이스케이프 분석은 컴파일 타임에 [heap allocation](https://en.wikipedia.org/wiki/Heap_allocation)을 [stack allocation](https://en.wikipedia.org/wiki/Stack-based_memory_allocation)으로 변환하는 방법이다. 이렇게 함으로써 GC의 수집 양을 줄일 수 있다.
