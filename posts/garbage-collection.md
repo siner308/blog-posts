@@ -62,7 +62,43 @@ moving GC의 단 하나의 단점은 참조를 통한 접근이 gc 환경에 의
 코드의 상호 운용성을 위해 GC는 객체들을 가비지 수집 영역 외부 위치에 복사해야 합니다. 다른 접근방식은 메모리 내의 객체는 고정하여 GC가 해당 객체를 moving시키지 못하도록 하고, native pointer를 사용하여 직접 메모리에 접근 가능하도록 하는 것이고, 이를 통해 포인터를 허용할 수 있습니다. (자세한 내용은 [Copying and Pinning](http://msdn2.microsoft.com/en-us/library/23acw07k.aspx)을 참고하세요.)
 
 ### Copying vs. mark-and-sweep vs. mark-and-don't-sweep
-작성 예정
+moving과 non-moving과 같은 차이 뿐만 아니라, marking을 하는 과정에서 white, gray, black객체를 어떻게 다루는지에 대한 차이도 존재합니다.
+
+#### 1. copying (semi-space collector)
+가장 간단한 접근방법은 **semi-space collector** 입니다. 
+여기에서 메모리는 동일한 크기의 **from space**와 **to space**로 나뉘어있습니다.
+처음에 모든 객체는 **to space**에 할당되어있고, 이 공간이 꽉차거나, collection cycle이 발동되면, **to space**는 **from space**가 되고, 반대의 경우에도 마찬가지입니다.
+root로부터 접근 가능한 객체들은 **from space**에서 **to space**로 복사됩니다. 이후 새로 생성되는 객체는 cycle이 발동되기 전까지 **to space**에 할당됩니다.<br>
+이 방법은 심플하지만, 객체를 할당하는 공간이 **from**과 **to**중 한곳만 사용되기 때문에 다른 알고리즘에 비해 메모리 사용량이 두배나 높습니다. 
+그리고 이러한 테크닉은 **stop-and-copy**라고도 불립니다.
+
+#### 2. mark and sweep
+**mark and sweep** GC는 각 객체별로 white, black 기록을 위해 한개에서 두개의 비트값을 가지게 됩니다. 
+grey를 위한 값은 별도로 분리된 리스트를 통해 관리하거나, 객체에 비트를 추가하여 관리할 수 있습니다.
+mark and sweep 전략은 moving이나 non-moving 전략중 하나를 선택할 수 있다는 이점이 있습니다.
+하지만 객체마다 추가되는 비트로 인해 메모리 비용이 증가하는 단점이 있습니다.
+
+#### 3. mark and don't sweep
+**mark and don't sweep** GC는 mark-and-sweep처럼 각 객체에 white, black 정보를 저장하기 위한 비트가 추가됩니다. 
+grey또한 마찬가지로 분리된 리스트 또는 객체의 추가비트를 사용하여 관리합니다.
+mark and sweep과의 차이점은 크게 두가지 있습니다. 
+1. 첫째로, black, white가 mark and sweep에서와는 **다른 의미**를 가집니다. 
+mark and don't sweep에서는 **도달 가능한 객체는 항상 black**입니다. 
+객체가 할당될 때 black으로 mark되고 **도달 불가능해질 때에도 black**을 유지합니다.
+**white는 사용되지 않거나 할당된것같은 객체**에 표시합니다. 
+2. 두번째로, **black/white가 뜻하는 의미가 동작중에 바뀝니다.** 
+최초 실행시에 0=white, 1=black의 의미를 가진다고 합시다. 
+만약 메모리 할당 작업에서 white(사용 가능한 메모리)를 찾지 못했다면, 이는 모든 객체가 black(사용중)이라는 것을 의미합니다.
+그 이후 black/white의 의미가 **반전**(0=black, 1=white)되어, 모든 객체의 상태가 1이므로 white가 됩니다.
+이것은 접근 가능한 객체가 black이라는 불변성을 일시적으로 꺠뜨리지만, 전체 마킹 단계가 즉시 이어지며 다시 black(0)으로 표시됩니다.
+해당 작업이 완료되면 모든 접근 불가능한 메모리는 흰색이 됩니다. 
+이로써 sweep 단계가 필요하지 않게 됩니다.
+
+mark and don't sweep 전략은 allocator와 collector의 협업을 필요로 하지만, 할당된 포인터당 1비트만 필요하므로 **공간 효율성**이 매우 높습니다. 
+그러나 대부분의 경우 메모리의 많은 부분이 black으로 잘못 표시되어 메모리 사용량이 적은 시간에 시스템에 리소스를 다시 제공하기 어렵기 떄문에 이러한 장점이 깎입니다.
+
+결국 **mark and don't sweep** 전략은 **mark and sweep**과 **stop and copy** 전략의 **장점을 흡수**하고 **단점을 보완**하여 만들어졌다고 볼 수 있습니다.
+
 ### Generational GC (ephemeral GC)
 작성 예정
 ### Stop-the-world vs. incremental vs. concurrent
