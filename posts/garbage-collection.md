@@ -100,9 +100,43 @@ mark and don't sweep 전략은 allocator와 collector의 협업을 필요로 하
 결국 **mark and don't sweep** 전략은 **mark and sweep**과 **stop and copy** 전략의 **장점을 흡수**하고 **단점을 보완**하여 만들어졌다고 볼 수 있습니다.
 
 ### Generational GC (ephemeral GC)
-작성 예정
+접근 불가능한 객체들의 **대부분이 생성된지 얼마 안된 것**들이라는 사실이 많은 프로그램을 통해 통계적으로 관찰되었습니다. (Generational hypothesis 라고 알려져 있습니다.)
+
+<img src="https://user-images.githubusercontent.com/34048253/151658996-e4cd9344-8a27-4725-a992-0bb60c50bf23.gif" width="80%" />
+
+Generational GC는 객체들의 세대(generation)를 분리하고, 대부분의 GC 사이클에서 특정 generation에 대해서만 작업을 수행합니다.
+또한 런타임 시스템은 참조 생성 및 덮어쓰기를 관찰하여, 객체의 generation이 변경되는 시점에 대한 정보를 유지합니다.
+해당 정보를 통해 GC가 동작시에 전체 트리를 순회하지 않고도 어떤 객체들이 GC의 대상인지(특정 generation에 해당하는지) 알 수 있습니다.
+만약 generational hypothesis가 성립한다면, 대부분의 GC 타겟들을 회수하면서 수집 사이클을 빠르게 할 수 있습니다.
+
+이러한 컨셉을 구현하기 위해, 많은 generational GC는 메모리의 영역을 분리하여 객체들을 수명에 따라 나눠서 관리합니다.
+한 메모리 영역이 가득차면, order generation의 참조를 root로 사용하여 해당 영역의 객체들이 추작됩니다.
+이때 해당 generation의 대부분의 객체들은 수집되고, 해당 공간은 새로운 객체를 할당하기 위해 비워집니다.
+해당 수집 단계에서 많은 객체를 수집하지 못하면, 살아남은 객체들은 (몇몇 또는 전체) 기존에 있던 generation에서 다음 영역으로 이동하게 됩니다. (이를 **promotion**이라고 부릅니다.) 
+그리고 기존 메모리 영역 전체는 새로운 객체들을 위한 공간이 됩니다.
+이러한 기술은 GC를 굉장히 빠르게 해줍니다. 왜냐하면 이 GC는 한 순간에 한 영역만 GC를 진행하면 되기 때문입니다.
+
+<img src="https://user-images.githubusercontent.com/34048253/151661886-34952d3c-3d41-4681-b6e5-9a2bbc28c2a2.PNG" width="70%">
+
+[Ungar](https://en.wikipedia.org/wiki/David_Ungar)의 전통적인 generation GC는 두개의 generation을 가졌습니다.
+이 GC모델은 **new space**라고 부르는 young generation을 새로운 객체가 생성되는 큰 영역인 **eden**과, 
+두개의 작은 공간인 past survivor space와, future survivor space로 나눕니다.
+새 공간의 객체들을 참조할 수 있는 older generation에 있는 객체들은 **remembered set**에 보관됩니다.
+GC가 일어날때마다, new space에 있는 객체들은 remembered set에 있는 root로부터 추적되고, future survivor space로 복사됩니다.
+Future survivor space가 가득차면, 객체들은 오래된 객체들이 머무는 공간으로 promote되고, 이러한 절차를 **tenuring**이라고 부릅니다.
+GC가 끝날때, 몇몇 객체들은 future survivor space에 남아있게 되고, eden과 past survivor space는 비어있게 됩니다.
+future survivor space와 past survivor space는 서로 교체되고 프로그램을 계속 진행하여 eden에 객체를 할당합니다.
+Ungar의 초기 시스템에서는 eden의 크기가 각 survivor space에 비해 5배정도 컸습니다.
+
+generation GC는 경험적 접근이기 때문에, 몇몇 접근할 수 없는 객체들은 각 GC 사이클에 메모리 반환이 되지 않을 수 있습니다. 
+그러므로 주기적으로 full mark and sweep이나 copying GC를 수행해줄 필요가 있습니다.
+사실, Java나 .NET Framework과 같은 현대의 프로그래밍 언어의 런타임 시스템은 다양한 전략을 가지는 하이브리드 방식을 사용하고 있습니다.
+예를 들어, 대부분의 collection은 몇개의 generation에 대해서만 수행하지만, 가끔 mark-and-sweep이 수행되거나, 드물게 full copying 등이 수행됩니다.
+collector 수행 범위를 기준으로 두개의 전략을 나누어 설명할때 **minor cycle(minor gc)**과 **major cycle(major gc)**로 부릅니다.
+
 ### Stop-the-world vs. incremental vs. concurrent
 작성 예정
+
 ### Precise vs. conservative and internal pointers
 작성 예정
 
