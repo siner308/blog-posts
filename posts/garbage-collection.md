@@ -135,7 +135,27 @@ generation GC는 경험적 접근이기 때문에, 몇몇 접근할 수 없는 �
 collector 수행 범위를 기준으로 두개의 전략을 나누어 설명할때 **minor cycle(minor gc)**과 **major cycle(major gc)**로 부릅니다.
 
 ### Stop-the-world vs. incremental vs. concurrent
-작성 예정
+Stop-the-world GC는 collection이 진행되는 동안 프로그램의 실행을 완전히 멈춥니다. (**embarrassing pause**)
+완전이 멈춤으로써 collector가 동작하는 동안 새로운 객체가 할당되지 않게 되기 때문에 객체들이 갑자기 접근 불가능하게 되는것을 방지합니다.
+그러므로 Stop-the-world GC는 상호작용이 없는 프로그램에 더 적합합니다. 
+이 GC는 구현이 단순하고 incremental GC방식에 비해 빠릅니다.
+
+Incremental GC와 Concurrent GC는 메인 프로그램 실행이 중지되는 시간을 줄이는것을 목표로 설계되었습니다.
+
+**Incremental** GC는 별개의 phase에서 GC를 수행하고, 각 phase간에 프로그램 실행을 허용합니다.
+하지만 incremental GC에서 각 phase의 GC 수행시간의 합은 일괄로 GC를 수행한것보다 오래 걸리므로, 
+이러한 GC는 총 처리량을 낮출 수 있습니다.
+
+> **Unity - Incremental Garbage Collection**<br>
+> Incremental GC 방식은 GC 작업을 여러 개의 슬라이스로 분할합니다. 
+> 따라서 GC 작업을 위해 프로그램 실행을 한 번에 오랫동안 중단하지 않고 여러 번에 걸쳐 짧게 중단할 수 있습니다. 
+> 이렇게 하면 GC에 소요되는 시간의 총량이 줄어드는 것은 아니지만, 
+> 여러 개의 프레임에 걸쳐 워크로드를 분산함으로써 원활한 애니메이션의 맥을 끊는 GC 스파이크 문제를 크게 줄일 수 있습니다.
+
+**Concurrent** GC는 프로그램의 실행 스택을 스택할때를 제외하고는 프로그램을 멈추지 않습니다.
+
+프로그램과 GC가 서로를 방해하지 않도록 하려면, 설계를 신중하게 해야합니다.
+예를들어, 프로그램이 새로운 객체를 할당해야 할때, 런타임 시스템은 GC가 완료될때까지 해당 작업을 연기시키거나, GC에게 이를 알려야합니다.
 
 ### Precise vs. conservative and internal pointers
 작성 예정
