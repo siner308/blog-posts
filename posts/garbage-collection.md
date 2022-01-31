@@ -156,20 +156,23 @@ Incremental GC와 Concurrent GC는 메인 프로그램 실행이 중지되는 �
 
 ### Precise vs. conservative and internal pointers
 몇몇 collector들은 모든 객체의 포인터(reference)를 정확히 식별(identify)할 수 있습니다.
-이러한 collector를 precise(또는 exact, accurate) collector라고 부릅니다.
-이와 반대되는 collector는 conservative 또는 partly conservative collector입니다.
-Conservative collector는 매모리의 모든 패턴이 포인터가 될 수 있고, 만약 포인터로 해석된 경우, 그것은 할당된 객체를 가리킬 것이라고 가정합니다.
+이러한 collector를 **precise**(또는 exact, accurate) collector라고 부릅니다.
+
+이와 반대되는 collector는 **conservative** 또는 partly conservative collector입니다.
+Conservative collector는 메모리의 모든 패턴이 포인터가 될 수 있고, 만약 포인터로 해석된 경우, 그것은 할당된 객체를 가리킬 것이라고 가정합니다.
 Conservative collector는 포인터가 아닌것을 포인터로 식별하여(**false positive**), 사용되지 않는 메모리를 해제시키지 않을 수 있습니다.
-하지만 실제로 이러한 문제는 프로그램이 많은 데이터를 처리하지 않는 한 항상 문제가 되는 것은 아닙니다.
+(하지만 실제로 이러한 문제는 프로그램이 많은 데이터를 처리하지 않는 한 항상 문제가 되는 것은 아닙니다.)
+
 False positive는 일반적으로 64비트 시스템보다 32비트 시스템에서 더 많이 발생합니다.
 왜냐하면 64비트의 유효 메모리 주소는 32비트에 비해 비교적 작은 비율을 차지하기 때문입니다.
 따라서 임의의 64비트 패턴은 false positive을 발생시킬 가능성이 적습니다.
 False negative 또한 발생할 수 있는데, [XOR linked list](https://en.wikipedia.org/wiki/XOR_linked_list)를 사용하는 등의 포인터가 hidden인 경우 등에 해당합니다.
 Precise collector가 실용적인지 여부는 해당 프로그래밍 언어의 타입 safety 속성에 달려있습니다.
-Conservative GC가 필요한 예로 C 언어를 들 수 있습니다.
-C 언어는 type이 지정된(void가 아닌) 포인터를 type이 지정되지 않은(void) 포인터로 type cast할 수 있고, 그 반대의 경우도 마찬가지입니다.
 
-관련 문제는 내부 포인터 또는 개체 내의 필드에 대한 포인터와 관련이 있습니다.
+Conservative GC가 필요한 예로 C 언어를 들 수 있습니다.
+C 언어는 type이 지정된(void가 아닌) 포인터를 type이 지정되지 않은(void) 포인터로 [type cast](https://ko.wikipedia.org/wiki/%ED%98%95_%EB%B3%80%ED%99%98)할 수 있고, 그 반대의 경우도 마찬가지입니다.
+
+관련 문제는 **internal pointer** 또는 개체 내의 필드에 대한 포인터와 관련이 있습니다.
 만약 언어의 의미 체계가 internal pointer를 허용하는 경우, 동일한 객체에 대해 참조 가능한 다양한 주소값이 있을 수 있고, 이는 해당 객체가 garbage있지 결정하는 것을 복잡하게 만듭니다.
 C++의 경우, 다중상속을 사용할 때 base object에 대한 포인터들이 각각 다른 주소를 가질 수 있습니다.
 엄격하게 최적화된 프로그램에서, 해당 객체에 대한 포인터가 레지스터에 덮어씌워졌을 수 있으므로, internal pointer를 스캔해야합니다.
