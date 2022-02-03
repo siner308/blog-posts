@@ -6,12 +6,12 @@ tags:
 date:   2021-12-26
 ---
 
+# Garbage란?
+
 > Garbage는 컴퓨터의 메모리에 있지만 앞으로 사용되지 않을 데이터나 객체 또는 메모리 영역을 가리킵니다.
 > 모든 컴퓨터 시스템은 제한적인 메모리를 가지고 있고, 대부분의 소프트웨어 garbage를 만들어내기 때문에, 이를 메모리에서 해제하여 다시 사용할 수 있게 해야 합니다.
 
-# Garbage가 발생하는 이유
-
-> 아래의 Item과 Stack 두 클래스를 활용한 코드가 다음과 같을때, 두번째로 push해준 Item은 pop 이후 어디에서도 접근할 수 없는 객체, 즉 garbage가 되었습니다.
+아래의 Item과 Stack 두 클래스를 활용한 코드가 다음과 같을때, 두번째로 push해준 Item은 pop 이후 어디에서도 접근할 수 없는 객체, 즉 **garbage**가 되었습니다.
 
 <details>
 <summary><span style="cursor: pointer; border-width: 0.1em; border-style: solid; border-color: black">Item, Stack 클래스 (열어서 보기)</span></summary>
@@ -57,6 +57,8 @@ stack.pop(); // [Item(1)] Item(2)
 ```
 
 ---
+
+# Garbage Collection이란?
 
 >가비지컬렉션(garbage collection, GC)은 자동으로 메모리를 관리해주는 기법입니다.
 프로세스에 의해 할당되었지만, 더이상 참조되지 않는 메모리를 garbage라고 하고, 이러한 garbage를 수거하는 작업은 garbage collector가 진행합니다.
