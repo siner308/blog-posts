@@ -377,6 +377,16 @@ remote reference가 버려질때, dec 메시지가 source node로 전송됩니�
 예를 들어, Swift에서는 ARC(Automatic Reference Counting)이라는 메모리 관리 기법을 통해 컴파일 시점에 컴파일러가 개발자를 대신하여 메모리 관리 코드를 적절한 위치에 자동으로 삽입합니다.
 즉, Swift 코드에서 개발자가 release 코드를 직접 작성하지 않아도 실제로 바이너리 코드에는 메모리 해제 코드가 들어가도록 한다는 것입니다.
 
+# 공부한 내용 어떻게 써먹을 것인가
+### 1. GC 최적화 하기
+- [Garbage Collection 튜닝](https://d2.naver.com/helloworld/37111)
+
+### 2. 서비스의 특성에 맞는 최적의 GC 고르기
+- [Cassandra stress-test를 활용한 Garbage Collector TEST (G1GC, CMS, ZING Read/Write Mixed)](https://parksuseong.blogspot.com/2019/12/cassandra-stress-test-garbage-collector.html)
+
+### 3. 장애 상황에 대처하기
+- [cassandra gc 튜닝 - compaction과 full gc](https://knight76.tistory.com/entry/cassandra-compaction-%EA%B4%80%EB%A0%A8)
+
 # 언어별 GC 문서
 위의 GC 종류에 대해 쭉 따라오셨다면, 다음 언어별 GC 문서에 대해 읽을때 전보다 이해가 더 잘 될 것입니다. 
 - [Java GC Basic](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
