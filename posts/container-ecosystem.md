@@ -68,9 +68,7 @@ containerd와 CRI-O 이 두가지 Container Runtime이 현재 가장 널리 사�
 
 ### containerd
 
-Docker에서 만든 Container Runtime이 바로 containerd 입니다[.](https://containerd.io/)
-
-[containerd](https://containerd.io/)
+Docker에서 만든 Container Runtime이 바로 [containerd](https://containerd.io/) 입니다.
 
 ### CRI-O
 
