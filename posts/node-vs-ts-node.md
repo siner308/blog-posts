@@ -16,9 +16,9 @@ node와 ts-node의 차이가 어디에서 오는지 알아보기 위해 조사�
 ```typescript
 function isPrime(num: number): boolean {
   if (num < 2) return false;
-  if (num == 2) return true;
+  if (num === 2) return true;
   for (let i = 2; i < num; i++) {
-    if (num % i == 0) return false;
+    if (num % i === 0) return false;
   }
   return true;
 }
@@ -51,9 +51,9 @@ interface MemoryUsage {
 
 function isPrime(num: number): boolean {
   if (num < 2) return false;
-  if (num == 2) return true;
+  if (num === 2) return true;
   for (let i = 2; i < num; i++) {
-    if (num % i == 0) return false;
+    if (num % i === 0) return false;
   }
   return true;
 }
