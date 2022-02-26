@@ -6,6 +6,7 @@ tags:
     - django
     - docker
 date: 2019-02-25
+image: https://user-images.githubusercontent.com/34048253/155849594-90045484-a15e-4b3b-abf0-2ab382b9a518.png
 ---
 
 저번 장에서는 `Django 공식 도커 이미지`를 확인해보았고, `Deprecated`되었음을 확인했습니다.<br>

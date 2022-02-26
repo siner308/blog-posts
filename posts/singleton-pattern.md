@@ -4,6 +4,7 @@ subtitle: "반복되는 인스턴스 낭비를 줄이자"
 tags:
     - oop
 date: 2020-02-23
+image: https://user-images.githubusercontent.com/34048253/155849292-661c839f-e3c7-46e4-b41d-4410c5cc27c4.png
 ---
 
 참고자료

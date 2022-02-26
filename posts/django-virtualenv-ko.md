@@ -5,6 +5,7 @@ tags:
     - python
     - django
 date: 2019-01-12
+image: https://user-images.githubusercontent.com/34048253/155849742-0083a4d2-a19f-4806-b36c-24f707425ca4.png
 ---
 
 본 게시물의 내용은 **Ubuntu 16.04** 를 기반으로 작성되었습니다.

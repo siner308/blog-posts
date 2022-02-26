@@ -4,6 +4,7 @@ subtitle: "3 way handshake의 상황별 처리방법에 대해 알아보자 "
 tags:
     - network
 date:   2021-12-18
+image: https://upload.wikimedia.org/wikipedia/commons/5/5b/InternetProtocolStack.png
 ---
 
 TCP/IP는 현재 인터넷 프로토콜 중 가장 많이 쓰이고있다.

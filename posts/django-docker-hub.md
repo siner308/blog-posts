@@ -6,6 +6,7 @@ tags:
     - django
     - docker
 date: 2019-02-16
+image: https://user-images.githubusercontent.com/34048253/155849664-c7f20fd7-0925-417c-9eed-16a16530facb.png
 ---
 
 이번 장에서는 `Django 공식 이미지`를 사용하여 `Docker의 기본 개념`에 대해 설명하겠습니다.<br>

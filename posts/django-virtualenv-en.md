@@ -5,6 +5,7 @@ tags:
     - python
     - django
 date: 2019-01-12
+image: https://user-images.githubusercontent.com/34048253/155849742-0083a4d2-a19f-4806-b36c-24f707425ca4.png
 ---
 
 This post is based on **Ubuntu 16.04**.

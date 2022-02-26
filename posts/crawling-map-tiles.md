@@ -6,6 +6,7 @@ tags:
     - crawling
     - map
 date: 2019-01-27
+image: https://user-images.githubusercontent.com/34048253/155849689-6988ab4c-36b7-4118-b05f-5c1211e88c8c.png
 ---
 
 ## 0) 계기

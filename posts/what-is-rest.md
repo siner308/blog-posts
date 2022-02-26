@@ -4,6 +4,7 @@ subtitle: "REST API는 대체 무엇이고, Restful 하다는 건 대체 무엇�
 tags:
     - http
 date: 2020-01-27
+image: https://user-images.githubusercontent.com/34048253/155849329-c8caaa49-54cc-481b-8532-ad10e1e5948c.png
 ---
 
 참고자료

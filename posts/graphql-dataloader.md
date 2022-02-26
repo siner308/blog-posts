@@ -6,6 +6,7 @@ tags:
     - nestjs
     - typescript
 date: 2021-12-11
+image: https://user-images.githubusercontent.com/34048253/155850113-999fabdb-c665-431a-8baf-a8c840ace61d.png
 ---
 
 - 이 포스팅의 예제 코드는 typescript + nestjs를 기반으로 작성되었지만, 다른 언어에도 마찬가지로 적용이 가능합니다.

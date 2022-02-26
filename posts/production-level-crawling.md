@@ -7,6 +7,7 @@ tags:
     - container
     - aws
 date: 2021-04-18
+image: https://user-images.githubusercontent.com/34048253/115137416-f99c3280-a060-11eb-8998-29af27199b93.png
 ---
 
 지난 25일동안 지인의 부탁으로 특정 게시판의 게시글들을 전부 크롤링하는 외주를 진행했었다.

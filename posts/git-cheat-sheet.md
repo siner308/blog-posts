@@ -5,6 +5,7 @@ tags:
     - git
     - cheat sheet
 date: 2021-08-02
+image: https://user-images.githubusercontent.com/34048253/155849835-6ff01102-41c3-4761-87a0-f75c898e0e0e.png
 ---
 
 ## remove untracked files

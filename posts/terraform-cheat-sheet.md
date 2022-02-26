@@ -6,6 +6,7 @@ tags:
     - terraform
     - iac
 date: 2021-08-14
+image: https://user-images.githubusercontent.com/34048253/129446247-056cd731-d263-4e57-81e3-4ebd2916a5c4.png
 ---
 
 ## force unlock backend

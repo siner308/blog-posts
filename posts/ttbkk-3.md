@@ -7,6 +7,7 @@ tags:
     - map
     - http
 date: 2021-10-24
+image: https://user-images.githubusercontent.com/34048253/138466775-b360166d-c345-478a-95ce-b437de512469.png
 ---
 
 떡볶이맵의 데이터가 점점 많아지면서 marker cluster용 api를 구축해야 했지만, 어떠한 라이브러리가 좋은지 파악하지 못했고 (내가 직접 구현할 수도 있고) best practice를 공부하지 못했기 떄문에 해당 작업을 잠시 뒤로 미루게 되었다.

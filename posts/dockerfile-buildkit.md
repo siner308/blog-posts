@@ -4,6 +4,7 @@ subtitle: "동시성을 가지며, 캐시 효율적이며 Dockerfile에 독립�
 tags:
     - docker
 date: 2020-03-29
+image: https://user-images.githubusercontent.com/34048253/155849229-de13c0fb-a354-4129-96f7-96f346bcb56d.png
 ---
 
 [공식 레퍼런스](https://docs.docker.com/engine/reference/builder/)를 토대로 작성되었습니다.

@@ -4,6 +4,7 @@ subtitle: "TCP/IP를 정리하며"
 tags:
     - network
 date: 2021-12-13
+image: https://user-images.githubusercontent.com/34048253/145793779-2da05d3e-8fe2-4803-b593-cd03b82453d4.jpeg
 ---
 패킷은 제어정보와 사용자 데이터로 이루어지며 이를 페이로드라고도 한다.
 패킷은 정보기술에서 컴퓨터 네트워크가 전달하는 데이터의 형식화된 블록이다.

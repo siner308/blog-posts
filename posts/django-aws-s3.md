@@ -7,6 +7,7 @@ tags:
     - aws
     - storage
 date: 2019-07-17
+image: https://user-images.githubusercontent.com/34048253/61307238-ef645900-a828-11e9-860c-21eb3bf9f7ab.png
 ---
 
 출처 : [django 에서 S3에 Static, media 파일 저장하고 사용하기](https://blog.leop0ld.org/posts/django-use-s3/)

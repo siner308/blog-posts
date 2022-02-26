@@ -4,6 +4,7 @@ subtitle: "동적 언어의 메모리 관리 기법"
 tags:
     - computer science
 date:   2021-12-26
+image: https://user-images.githubusercontent.com/34048253/147408809-ae9a3134-8b5b-4305-a30f-99fce81509bd.gif
 ---
 
 # Garbage란?
