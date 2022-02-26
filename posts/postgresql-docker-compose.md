@@ -5,6 +5,7 @@ tags:
     - docker
     - database
 date: 2019-03-02
+image: https://user-images.githubusercontent.com/34048253/155849543-18ab95ed-5c65-4020-9d31-c7071450e2df.png
 ---
 
 이번 장에서는 `Docker Compose`의 일반적인 사용방법과, 이를 사용하여 PostgreSQL을 배포하는 방법에 대해서 설명하겠습니다.

@@ -4,6 +4,7 @@ subtitle: "JIT의 동작원리와 코틀린에서의 컴파일 차이점"
 tags:
     - java
 date:   2021-12-25
+image: https://user-images.githubusercontent.com/34048253/147363191-49b62b21-ef59-422d-a58a-341dbe124190.png
 ---
 
 JIT(Just-In-Time)은 프로그램을 실제 실행하는 시점에 기계어로 번역하는 컴파일 기법이다.

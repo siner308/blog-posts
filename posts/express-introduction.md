@@ -5,6 +5,7 @@ tags:
     - node
     - typescript/javascript
 date: 2020-01-03
+image: https://user-images.githubusercontent.com/34048253/155849369-ccfc91d8-071d-4094-bfa0-479b364dfb54.png
 ---
 
 참고자료

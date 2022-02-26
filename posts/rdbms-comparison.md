@@ -4,6 +4,7 @@ subtitle: "mysql vs mariadb vs postgresql vs sqlite vs oracle vs mssql"
 tags:
     - database
 date: 2021-10-11
+image: https://user-images.githubusercontent.com/34048253/136786870-419bd656-9630-49a9-95b4-da4f4555f36f.png
 ---
 
 # 이전 게시물인 [RDBMS의 특징](https://blog.siner.io/2021/10/10/rdbms-features)을 보고 오면 좋습니다.

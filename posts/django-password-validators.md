@@ -6,6 +6,7 @@ tags:
     - django
     - validation
 date: 2021-08-16
+image: https://user-images.githubusercontent.com/34048253/155849956-6d7ceb71-b0df-4718-9977-0a9341e56d49.png
 ---
 
 django의 [startproject](https://docs.djangoproject.com/en/3.2/ref/django-admin/#django-admin-startproject)로 기본적으로 생성되는 `AUTH_PASSWORD_VALIDATORS`에 대해 분석해보려 합니다

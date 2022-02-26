@@ -4,6 +4,7 @@ subtitle: "온보딩 Best Practices와 첫 90일을 어떻게 계획할 것인�
 tags:
     - etc
 date: 2021-07-24
+image: https://user-images.githubusercontent.com/34048253/126856277-4037be6b-ddf6-474d-9388-e030a078c987.png
 ---
 [The Ultimate Guide to Onboarding New Developers: Industry Best Practices](https://codesubmit.io/blog/guide-to-onboarding-developers/)
 

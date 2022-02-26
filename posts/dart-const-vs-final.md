@@ -4,6 +4,7 @@ subtitle: "상수를 표현하는 두가지 방법"
 tags:
     - dart
 date: 2020-12-08
+image: https://user-images.githubusercontent.com/34048253/155849171-72a8ff67-0d80-42dc-a83c-6db233a04a3a.png
 ---
 
 final과 const는 모두 상수(constant)를 선언할 때 사용되는 키워드입니다.

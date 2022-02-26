@@ -9,6 +9,7 @@ tags:
     - map
     - aws
 date: 2021-09-26
+image: https://user-images.githubusercontent.com/34048253/134799280-8708fa31-c456-48e6-b9d2-9d7ccd7845ec.png
 ---
 
 # 문제점

@@ -5,6 +5,7 @@ tags:
     - kubernetes
     - container
 date: 2022-02-21
+image: https://user-images.githubusercontent.com/34048253/154848123-1601c82d-85ee-486e-aa7d-082aa0ce7935.png
 ---
 
 쿠버네티스 관련 괜찮은 영상이 있어서 시청 하면서 메모한 내용을 정리해두고자 합니다.
@@ -62,7 +63,7 @@ Service의 IP주소를 통해 외부에서 접근이 가능하지만, Ingress를
 
 다음 이미지는 쿠버네티스 공식에서 제공하는 인그레스의 간단한 예시입니다.
 
-<img width="50%" alt="스크린샷 2022-02-20 오후 11 41 52" src="https://user-images.githubusercontent.com/34048253/154848123-1601c82d-85ee-486e-aa7d-082aa0ce7935.png">
+<img width="100%" alt="스크린샷 2022-02-20 오후 11 41 52" src="https://user-images.githubusercontent.com/34048253/154848123-1601c82d-85ee-486e-aa7d-082aa0ce7935.png">
 
 ## ConfigMap
 > 컨피그맵은 키-값 쌍으로 기밀이 아닌 데이터를 저장하는 데 사용하는 API 오브젝트이다. 

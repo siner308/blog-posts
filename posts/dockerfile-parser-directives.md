@@ -4,6 +4,7 @@ subtitle: "FROM 명령어 이전에 사용할 수 있는 지시문"
 tags:
     - docker
 date: 2020-03-29
+image: https://user-images.githubusercontent.com/34048253/155849229-de13c0fb-a354-4129-96f7-96f346bcb56d.png
 ---
 
 [공식 레퍼런스](https://docs.docker.com/engine/reference/builder/)를 토대로 작성되었습니다.

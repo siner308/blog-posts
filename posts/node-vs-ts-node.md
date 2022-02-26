@@ -5,6 +5,7 @@ tags:
   - typescript
   - node
 date:   2022-02-19
+image: https://user-images.githubusercontent.com/34048253/154791313-ee720cb4-16a0-4482-aa8a-f78815a84916.png
 ---
 node와 ts-node의 차이가 어디에서 오는지 알아보기 위해 조사한 과정을 기록으로 남기고자 합니다.
 

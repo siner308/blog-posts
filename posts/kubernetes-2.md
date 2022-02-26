@@ -5,6 +5,7 @@ tags:
   - kubernetes
   - container
 date: 2022-02-25
+image: https://user-images.githubusercontent.com/34048253/155732647-7a550481-e417-4173-8250-d4701222018c.png
 ---
 
 [이전 글](https://blog.siner.io/2022/02/21/kubernetes-1)에 이어서 작성합니다.

@@ -4,6 +4,7 @@ subtitle: "데이터베이스 면접 질문은 아니고 용어 정리"
 tags:
     - database
 date: 2021-10-10
+image: https://user-images.githubusercontent.com/34048253/136663821-1d9ff609-f7bd-480d-b0ab-b38105aba77d.png
 ---
 
 # 동시성 제어 - MVCC (Multi Version Concurrency Control)

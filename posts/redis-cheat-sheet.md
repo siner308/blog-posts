@@ -5,6 +5,7 @@ tags:
     - database
     - cheat sheet
 date: 2021-08-02
+image: https://user-images.githubusercontent.com/34048253/155849784-228fb73b-f86f-4848-83bd-29e954327047.png
 ---
 
 ## remove all keys

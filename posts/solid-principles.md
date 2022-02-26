@@ -4,6 +4,7 @@ subtitle: "객체지향 프로그래밍 5대 원칙"
 tags:
     - oop
 date: 2020-06-18
+image: https://user-images.githubusercontent.com/34048253/102365825-52988300-3ffb-11eb-96b5-1300b6f290c8.png
 ---
 
 >**SOLID 원칙과 관련된 좋은 그림예시가 있어서 이를 번역하면서 예제코드를 추가하였습니다.**
