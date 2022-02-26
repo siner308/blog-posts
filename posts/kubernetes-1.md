@@ -61,7 +61,8 @@ Pod이 죽더라도, Service의 IP주소는 변하지 않습니다.
 Service의 IP주소를 통해 외부에서 접근이 가능하지만, Ingress를 사용하면 siner.io와 같이 도메인 주소를 통한 접근이 가능해집니다.
 
 다음 이미지는 쿠버네티스 공식에서 제공하는 인그레스의 간단한 예시입니다.
-<img width="420" alt="스크린샷 2022-02-20 오후 11 41 52" src="https://user-images.githubusercontent.com/34048253/154848123-1601c82d-85ee-486e-aa7d-082aa0ce7935.png">
+
+<img width="50%" alt="스크린샷 2022-02-20 오후 11 41 52" src="https://user-images.githubusercontent.com/34048253/154848123-1601c82d-85ee-486e-aa7d-082aa0ce7935.png">
 
 ## ConfigMap
 > 컨피그맵은 키-값 쌍으로 기밀이 아닌 데이터를 저장하는 데 사용하는 API 오브젝트이다. 
