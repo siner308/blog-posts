@@ -5,6 +5,7 @@ tags:
     - kubernetes
     - container
 date:   2022-03-05
+image: https://user-images.githubusercontent.com/34048253/156888390-6c95f6c4-dd5c-49b1-b6bc-b6ec5ca5c624.png
 ---
 
 # minikube 소개
