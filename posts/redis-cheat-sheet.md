@@ -20,5 +20,5 @@ redis>
 
 ## get values by keys (in bash)
 ```bash
-echo 'keys devtalk:qa:viewerCount:*' | redis-cli | sed 's/^/get /' | redis-cli
+echo 'keys YOURKEY:*' | redis-cli | sed 's/^/get /' | redis-cli
 ```
