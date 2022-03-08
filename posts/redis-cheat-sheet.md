@@ -17,3 +17,8 @@ Are you sure (y/n)? y
 OK
 redis> 
 ```
+
+## get values by keys (in bash)
+```bash
+echo 'keys devtalk:qa:viewerCount:*' | redis-cli | sed 's/^/get /' | redis-cli
+```
