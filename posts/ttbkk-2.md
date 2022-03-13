@@ -75,7 +75,8 @@ export async function post<T>(
 
 ### noti api
 golang으로 작성한 api는 클라이언트로부터 받은 메시지를 다양한 채널로 전송합니다.
-```golang
+
+```go
 type Slack struct{}
 
 func (c *Slack) Send(message string, description string) {
