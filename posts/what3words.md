@@ -15,10 +15,10 @@ what3words (W3W)는 전 세계 지도 상의 스팟`(3m x 3m)`을 3개의 `무�
 현재 `27개 언어`로 W3W 세단어 주소가 제공 중이며, `카카오`에서도 what3words와의 제휴를 통해 `한글` W3W 주소체계를 서비스 하기 시작했습니다.
 
 ![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory&fname=http%3A%2F%2Fcfile2.uf.tistory.com%2Fimage%2F994AD3385CA1AF9C2EDECC)
-<iframe title="[카카오맵] what3words 기능 사용 튜토리얼" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/397055543?service=kakao_tv" allowfullscreen frameborder="0" scrolling="no" allow="autoplay"></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rsVt5sjXqHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KHi4xQpwohY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RFRmSwIiiF8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="[카카오맵] what3words 기능 사용 튜토리얼" width="100%" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/397055543?service=kakao_tv" allowfullscreen frameborder="0" scrolling="no" allow="autoplay"></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/rsVt5sjXqHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/KHi4xQpwohY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/RFRmSwIiiF8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## API KEY 발급
 

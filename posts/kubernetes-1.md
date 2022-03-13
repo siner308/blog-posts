@@ -10,7 +10,7 @@ image: https://user-images.githubusercontent.com/34048253/154848123-1601c82d-85e
 
 쿠버네티스 관련 괜찮은 영상이 있어서 시청 하면서 메모한 내용을 정리해두고자 합니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X48VuDVv0do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="430" src="https://www.youtube.com/embed/X48VuDVv0do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # k8s란?
 쿠버네티스(kubernetes, 또는 k8s)는 구글이 만든 오픈소스 컨테이너 오케스트레이션 툴로, 컨테이너 애플리케이션의 관리를 돕습니다. 물리서버, 클라우드서버 등의 다양한 환경에서 사용이 가능합니다.

@@ -112,9 +112,9 @@ node와 ts-node 모두 출력된 결과에선 별 차이가 없었고, 반복문
 
 ts-node의 경우 ts-node 패키지를 실행하는 시간으로 인해 실제로는 수 초 이상의 시간이 더 소요되었습니다. 하지만 이러한 컴파일 타임은 서버와 같이 장시간 동작하는 프로세스에서는 의미없는 차이라고 느껴집니다.
 
-<div style="display: flex">
-<img width="50%" alt="스크린샷 2022-02-19 오후 4 22 24" src="https://user-images.githubusercontent.com/34048253/154791289-9d567493-c04c-41ca-b21d-30361287f442.png">
-<img width="50%" alt="스크린샷 2022-02-19 오후 4 23 46" src="https://user-images.githubusercontent.com/34048253/154791334-074cc7c0-d2d3-4e13-a414-468aa2035bad.png">
+<div style="display: flex; flex-wrap: wrap">
+    <img width="300" alt="스크린샷 2022-02-19 오후 4 22 24" src="https://user-images.githubusercontent.com/34048253/154791289-9d567493-c04c-41ca-b21d-30361287f442.png">
+    <img width="300" alt="스크린샷 2022-02-19 오후 4 23 46" src="https://user-images.githubusercontent.com/34048253/154791334-074cc7c0-d2d3-4e13-a414-468aa2035bad.png">
 </div>
 
 ## Resident Set Size (RSS)
@@ -122,7 +122,7 @@ RSS의 경우 7~8배 정도의 차이가 있었습니다.
 또한 node의 rss는 코드가 진행됨에따라 변화했지만, ts-node는 변화가 거의 없었습니다.
 node는 최소한의 메모리만을 사용하도록 최적화가 되어있는 반면, ts-node는 한번에 쫙 땡겨서 쓴다는 느낌을 받았습니다.
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap">
 <img width="206" alt="스크린샷 2022-02-19 오후 4 22 38" src="https://user-images.githubusercontent.com/34048253/154791298-784cbe7f-6f98-499f-be9e-ff2887b222f7.png">
 
 <img width="191" alt="스크린샷 2022-02-19 오후 4 24 00" src="https://user-images.githubusercontent.com/34048253/154791343-f48a19c6-457a-4409-ac39-fae2bf0ef4bf.png">
@@ -143,7 +143,7 @@ function loadCompiler(name: string | undefined, relativeToPath: string) {
 }
 ```
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap">
 <img width="193" alt="스크린샷 2022-02-19 오후 4 22 52" src="https://user-images.githubusercontent.com/34048253/154791307-21a0e4d1-6ebd-417d-99ea-3735b68e6182.png">
 <img width="158" alt="스크린샷 2022-02-19 오후 4 24 10" src="https://user-images.githubusercontent.com/34048253/154791349-1070f20d-840e-43e5-ad99-7214cb39e975.png">
 </div>
@@ -153,7 +153,7 @@ function loadCompiler(name: string | undefined, relativeToPath: string) {
 heapUsed의 경우 24~27배정도의 차이가 있었습니다.
 눈에 띄었던 점은, node의 경우 30% 구간을 통과할때 heapUsed가 60만에서 70만정도 감소했지만, ts-node의 경우엔 계속해서 증가하기만 하는 차이를 보였습니다. 이는 반복해서 테스트를 돌려도 같은 결과가 나타났습니다.
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap">
 <img width="183" alt="스크린샷 2022-02-19 오후 4 23 03" src="https://user-images.githubusercontent.com/34048253/154791313-ee720cb4-16a0-4482-aa8a-f78815a84916.png">
 <img width="198" alt="스크린샷 2022-02-19 오후 4 24 20" src="https://user-images.githubusercontent.com/34048253/154791353-25cdd0d4-97c6-4c5c-89e1-d90b9f69cb61.png">
 </div>
@@ -163,7 +163,7 @@ heapUsed의 경우 24~27배정도의 차이가 있었습니다.
 external은 V8에서 관리하는 객체로써, JavaScript에 바인딩된 C++ 객체의 메모리 사용량을 나타냅니다.
 external또한 5배정도의 차이가 있었습니다.
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap">
 <img width="148" alt="스크린샷 2022-02-19 오후 4 23 15" src="https://user-images.githubusercontent.com/34048253/154791324-900cf6ff-6645-4bbe-bec2-9dad6ba7fcd9.png">
 <img width="147" alt="스크린샷 2022-02-19 오후 4 24 36" src="https://user-images.githubusercontent.com/34048253/154791359-98f8a107-38a2-4c8d-9f5b-a68c94aaa84a.png">
 </div>
@@ -172,7 +172,7 @@ external또한 5배정도의 차이가 있었습니다.
 
 arrayBuffers는 약 4배정도의 차이를 보였습니다.
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap">
 <img width="126" alt="스크린샷 2022-02-19 오후 4 23 24" src="https://user-images.githubusercontent.com/34048253/154791330-8fb6d0a1-88b3-4844-bccb-574370102aaa.png">
 <img width="131" alt="스크린샷 2022-02-19 오후 4 24 45" src="https://user-images.githubusercontent.com/34048253/154791362-57389610-7c49-489f-b4cb-3a1cd4c72336.png">
 </div>
