@@ -1,13 +1,13 @@
 ---
 title:  "ISMS-P에 대하여"
-subtitle: "(구) ISMS + (구) PIMS"
+subtitle: "통합된 ISMS와 PIMS"
 tags:
     - security
 date:   2022-03-19
 image: https://user-images.githubusercontent.com/34048253/159034003-ed843a1f-4b0c-4661-9c10-f8050a9771eb.png
 ---
 
-# ISMS + PIMS = ISMS-P
+# ISMS-P = ISMS + PIMS
 
 > 「정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시」 (2018년 11월) 시행으로 정보보호 관리체계(ISMS)와 개인 정보보호 관리체계(PIMS) 인증제도가 통합되었다.
 
