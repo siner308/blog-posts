@@ -5,6 +5,7 @@ tags:
     - agile
 date: 2022-03-26
 image: https://user-images.githubusercontent.com/34048253/160243146-97b3c137-4329-454e-8997-79ccfbac4277.png
+draft: true
 ---
 
 린 소프트웨어 개발 방법에 대해 알아보기 전에, 린이라는 단어의 어원을 살펴볼 필요가 있다.
