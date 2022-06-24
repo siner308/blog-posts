@@ -238,7 +238,7 @@ Relevant의 CTO인 Ihor Feoktistov는 인오피스나 리모트로 근무하는 
 - input에 필요한 샘플 데이터와 매뉴얼
 - 디자인패턴과 스타일 가이드
 - 모든 동작을 원활하게하기 위한 테스트케이스
-- staing과 production에서 사용되는 개발용 credential
+- staging과 production에서 사용되는 개발용 credential
 - (선택사항) 개발 시 고려해야할 예외사항을 적어둔 노트 (이전의 경험을 바탕으로 과거의 실수를 반복하지 않기 위한)
 
 ### 프로젝트/기능 문서
