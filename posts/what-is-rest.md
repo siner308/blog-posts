@@ -76,9 +76,10 @@ image: https://user-images.githubusercontent.com/34048253/155849329-c8caaa49-54c
 
 **Request**
 
-```text
+```
 POST http://mysite/users
 ```
+
 ```json
 {
     "country": "한국",
@@ -88,9 +89,10 @@ POST http://mysite/users
 
 **Response**
 
-```text
+```
 HTTP/1.1 201 Created
 ```
+
 ```json
 {
     "user": {
@@ -109,15 +111,16 @@ HTTP/1.1 201 Created
 
 **Request**
 
-```text
+```
 GET http://mysite/users
 ```
 
 **Response**
 
-```text
+```
 HTTP/1.1 200 OK
 ```
+
 ```json
 {
     "users": [
@@ -148,15 +151,16 @@ HTTP/1.1 200 OK
 
 **Request**
 
-```text
+```
 GET http://mysite/users/8
 ```
 
 **Response**
 
-```text
+```
 HTTP/1.1 200 OK
 ```
+
 ```json
 {
     "user": {
@@ -173,15 +177,17 @@ HTTP/1.1 200 OK
 `국적이 한국인 전체 사용자를 조회한다`와 같이 검색에 대한 요청은 알아보기 쉽게 표현이 가능합니다.
 
 **Request**
-```text
+
+```
 GET http://mysite/users?country=한국
 ```
 
 **Response**
 
-```text
+```
 HTTP/1.1 200 OK
 ```
+
 ```json
 {
     "users": [
@@ -202,11 +208,13 @@ HTTP/1.1 200 OK
 ```
 
 #### PUT
+
 PUT 메서드는 수정보다는 **해당 id의 자원을 지금 보내는 자원으로 대체한다** 라는 느낌에 더 가깝습니다. 변경하고싶지 않은 자원이 있다면, 기존의 자원을 그대로 전송해 주면 됩니다.
 
 `id가 6인 사용자의 정보를 변경한다`라는 request는 아래와 같이 표현이 가능합니다.
 
 **기존 데이터**
+
 ```json
 {
     "id": 6,
@@ -218,9 +226,10 @@ PUT 메서드는 수정보다는 **해당 id의 자원을 지금 보내는 자�
 
 **Request**
 
-```text
+```
 PUT http://mysite/users/6
 ```
+
 ```json
 {
     "country": "남극",
@@ -230,9 +239,10 @@ PUT http://mysite/users/6
 
 **Response**
 
-```text
+```
 HTTP/1.1 200 OK
 ```
+
 ```json
 {
     "user": {
@@ -258,9 +268,10 @@ HTTP/1.1 200 OK
 ```
 
 **Request**
-```text
+```
 PATCH http://mysite/users/8
 ```
+
 ```json
 {
     "name": "김지윤",
@@ -269,9 +280,11 @@ PATCH http://mysite/users/8
 ```
 
 **Response**
-```text
+
+```
 HTTP/1.1 200 OK
 ```
+
 ```json
 {
     "user": {
@@ -288,12 +301,12 @@ HTTP/1.1 200 OK
 
 **Request**
 
-```text
+```
 DELETE http://mysite/users/1
 ```
 
 **Response**
 
-```text
+```
 HTTP/1.1 200 OK
 ```
