@@ -8,6 +8,18 @@ date: 2021-08-02
 image: https://user-images.githubusercontent.com/34048253/155849835-6ff01102-41c3-4761-87a0-f75c898e0e0e.png
 ---
 
+## remove ignored files
+
+```bash
+$ git clean -dfX
+```
+
+> git-clean - Remove untracked files from the working tree
+> -d for removing directories
+> -f remove forcefully
+> -n Don’t actually remove anything, just show what would be done.
+> -X Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.
+
 ## remove untracked files
 
 ```bash
