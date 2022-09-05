@@ -14,11 +14,11 @@ image: https://user-images.githubusercontent.com/34048253/155849835-6ff01102-41c
 $ git clean -dfX
 ```
 
-> git-clean - Remove untracked files from the working tree
-> -d for removing directories
-> -f remove forcefully
-> -n Don’t actually remove anything, just show what would be done.
-> -X Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.
+> git-clean - Remove untracked files from the working tree<br>
+> `-d` for removing directories<br>
+> `-f` remove forcefully<br>
+> `-n` Don’t actually remove anything, just show what would be done.<br>
+> `-X` Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.
 
 ## remove untracked files
 
