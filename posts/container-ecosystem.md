@@ -50,7 +50,7 @@ container와 같은 격리 환경을 제공하기 위해 내부적으로 cgroup�
 
 kernel 관련 가상화 기술들이 docker의 발전에 꼭 필요한 요소인데, 이를 다루는 인터페이스가 외부 솔루션에 의존적이다 보니 어느 순간부터 kernel의 가상화 기술을 다루기 위한 interface를 자체적으로 개발, 관리해야 한다는 필요성이 생겼는데, 이 때문에 개발된것이 libcontainer이고, 이것이 docker v1.11이후 리팩토링 과정을 거쳐 지금의 runC가 되었습니다. 
 
-OCI를 준수하는 저수준 컨테이너 런타임으로 가장 잘 알려진 것은 runC 입니다. runC는 원래 도커에서 컨테이너를 실행하기 위해 개발되었으나, OCI 런타임 표준을 위해 독립적인 라이브러리로 사용되었습니다. 저수준 컨테이너 런타임은 컨테이너를 실제 실행하는 역할을 하지만 이미지로부터 컨테이너를 실행하려면 이미지와 관련된 APi같은 기능이 필요합니다. 이러한 기능은 고수준 컨테이너 런타임에서 제공됩니다.
+OCI를 준수하는 저수준 컨테이너 런타임으로 가장 잘 알려진 것은 runC 입니다. runC는 원래 도커에서 컨테이너를 실행하기 위해 개발되었으나, OCI 런타임 표준을 위해 독립적인 라이브러리로 사용되었습니다. 저수준 컨테이너 런타임은 컨테이너를 실제 실행하는 역할을 하지만 이미지로부터 컨테이너를 실행하려면 이미지와 관련된 API같은 기능이 필요합니다. 이러한 기능은 고수준 컨테이너 런타임에서 제공됩니다.
 
 [GitHub - opencontainers/runc: CLI tool for spawning and running containers according to the OCI specification](https://github.com/opencontainers/runc)
 
@@ -101,7 +101,7 @@ Docker에서 만든 Container Runtime이 바로 [containerd](https://containerd.
 
 # docker binaries
 
-컨테이너 런타임에 대해 아실제로 도커가 어떻게 구현되는지 살펴봅시다.
+컨테이너 런타임에 대해 실제로 도커가 어떻게 구현되는지 살펴봅시다.
 
 ubuntu20.04, docker 20.10.8 기준 /usr/bin에 설치되는 도커 관련 파일은 아래와 같습니다.
 
