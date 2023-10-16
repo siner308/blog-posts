@@ -2,7 +2,7 @@
 title: "class-validator를 사용한 타입스크립트(Typescript) Validation"
 subtitle: "Typescript Data Validation"
 tags:
-    - typescript/javascript
+    - typescript,javascript
     - validation
 date: 2019-12-17
 image: https://user-images.githubusercontent.com/34048253/71055071-a4fc5500-2197-11ea-89e3-b0b4dad1a0db.png

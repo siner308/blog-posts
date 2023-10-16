@@ -3,7 +3,7 @@ title: "프로덕션 레벨의 크롤러 개발 회고"
 subtitle: "python은 과연 크롤링하기 좋은 언어인가"
 tags:
     - crawling
-    - typescript/javascript
+    - typescript,javascript
     - container
     - aws
 date: 2021-04-18
