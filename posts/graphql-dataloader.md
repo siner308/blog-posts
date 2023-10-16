@@ -4,7 +4,7 @@ subtitle: "GraphQL에서 발생하는 N+1 문제 해결방법"
 tags:
     - graphql
     - nestjs
-    - typescript
+    - typescript,javascript
 date: 2021-12-11
 image: https://user-images.githubusercontent.com/34048253/155850113-999fabdb-c665-431a-8baf-a8c840ace61d.png
 ---

@@ -2,7 +2,7 @@
 title: "떡볶이맵 제작기 #1"
 subtitle: "문득 떡볶이가 먹고싶을때, 이곳을 방문하라"
 tags:
-    - typescript/javascript
+    - typescript,javascript
     - ttbkk
     - map
 date: 2021-07-18

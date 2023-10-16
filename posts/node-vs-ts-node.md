@@ -2,7 +2,7 @@
 title:  "node와 ts-node의 CPU,RAM 사용량 비교"
 subtitle: "ts-node를 production에서 사용하면 안되는 이유"
 tags:
-  - typescript
+  - typescript,javascript
   - node
 date:   2022-02-19
 image: https://user-images.githubusercontent.com/34048253/154791313-ee720cb4-16a0-4482-aa8a-f78815a84916.png

@@ -3,7 +3,7 @@ title: "Express.js의 미들웨어(Middleware)"
 subtitle: "Express 애플리케이션은 기본적으로 일련의 미들웨어 함수 호출입니다"
 tags:
     - node
-    - typescript/javascript
+    - typescript,javascript
 date: 2020-01-04
 image: https://user-images.githubusercontent.com/34048253/155849505-13269ce9-84ba-4541-994d-1ece20a746fa.png
 ---

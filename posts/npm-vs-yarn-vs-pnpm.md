@@ -2,7 +2,7 @@
 title: "npm vs yarn vs pnpm vs yarn2"
 subtitle: "pnpm은 정말로 탄소절감과 ssd수명에 도움을 줄까?"
 tags:
-    - typescript/javascript
+    - typescript,javascript
 date: 2020-12-19
 image: https://user-images.githubusercontent.com/34048253/155849011-f99a1dd2-7169-4f83-9ed4-a82390777d58.png
 ---

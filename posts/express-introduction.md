@@ -3,7 +3,7 @@ title: "Express.js란 무엇인가 (Javascript 백엔드 프레임워크)"
 subtitle: "Node.js를 위한 빠르고 개방적인 간결한 웹 프레임워크"
 tags:
     - node
-    - typescript/javascript
+    - typescript,javascript
 date: 2020-01-03
 image: https://user-images.githubusercontent.com/34048253/155849369-ccfc91d8-071d-4094-bfa0-479b364dfb54.png
 ---
