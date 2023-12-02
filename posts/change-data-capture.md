@@ -1,5 +1,5 @@
 ---
-title: "CDC 알아보기"
+title: "CDC(Change data capture) 알아보기"
 subtitle: "무중단 데이터베이스 마이그레이션 방법론"
 tags:
     - database
